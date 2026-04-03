@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nécrose Fragrances</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0A0A0A;
+      color: #FFD700;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 48px;
+      font-weight: bold;
+    }
+    .tagline {
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      margin-top: -20px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 50px 20px;
+      justify-items: center;
+    }
+    .card {
+      background: #111;
+      border-radius: 15px;
+      width: 250px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card h3 {
+      margin: 10px 0;
+      font-size: 22px;
+    }
+    .card p {
+      color: #FFFFFF;
+      font-size: 16px;
+    }
+    .card button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: #FFD700;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .card button:hover {
+      background: #B8860B;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: white;
+      font-size: 14px;
+      background: #0A0A0A;
+    }
+    @media (max-width: 600px) {
+      header { font-size: 36px; }
+      .tagline { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>Nécrose</header>
+<p class="tagline">You Can't Wear It, It Becomes You</p>
+
+<div class="products">
+  <div class="card">
+    <h3>Midnight Oud</h3>
+    <p>Dark. Deep. Powerful.</p>
+    <button>Order Now</button>
+  </div>
+  <div class="card">
+    <h3>Golden Smoke</h3>
+    <p>Warm. Rich. Addictive.</p>
+    <button>Order Now</button>
+  </div>
+  <div class="card">
+    <h3>Velvet Noir</h3>
+    <p>Soft. Seductive. Timeless.</p>
+    <button>Order Now</button>
+  </div>
+  <div class="card">
+    <h3>Amber Eclipse</h3>
+    <p>Earthy. Mystical. Bold.</p>
+    <button>Order Now</button>
+  </div>
+  <div class="card">
+    <h3>Crimson Rose</h3>
+    <p>Floral. Elegant. Intense.</p>
+    <button>Order Now</button>
+  </div>
+  <div class="card">
+    <h3>Silver Mist</h3>
+    <p>Fresh. Clean. Uplifting.</p>
+    <button>Order Now</button>
+  </div>
+  <div class="card">
+    <h3>Dark Vanilla</h3>
+    <p>Sweet. Warm. Alluring.</p>
+    <button>Order Now</button>
+  </div>
+  <div class="card">
+    <h3>Ocean Whisper</h3>
+    <p>Cool. Crisp. Inviting.</p>
+    <button>Order Now</button>
+  </div>
+  <div class="card">
+    <h3>Spiced Amber</h3>
+    <p>Exotic. Fiery. Unique.</p>
+    <button>Order Now</button>
+  </div>
+  <div class="card">
+    <h3>Black Orchid</h3>
+    <p>Dark. Mysterious. Elegant.</p>
+    <button>Order Now</button>
+  </div>
+</div>
+
+<footer>
+  © 2026 Nécrose Fragrances. All Rights Reserved.
+</footer>
+
+</body>
+</html>
