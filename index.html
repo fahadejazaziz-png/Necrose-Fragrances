@@ -1,79 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nécrose Fragrances</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #0A0A0A;
-      color: #FFD700;
-    }
-    header {
-      background-color: #0A0A0A;
-      padding: 20px;
-      text-align: center;
-      font-size: 2em;
-      letter-spacing: 2px;
-      border-bottom: 2px solid #B8860B;
-    }
-    nav a {
-      color: #FFD700;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #B8860B;
-    }
-    .perfume-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .perfume {
-      background-color: #111;
-      border: 1px solid #B8860B;
-      border-radius: 12px;
-      overflow: hidden;
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .perfume:hover {
-      transform: scale(1.05);
-    }
-    .perfume img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
-    .perfume h3 {
-      margin: 10px 0 5px 0;
-    }
-    .perfume p {
-      padding: 0 10px 10px 10px;
-      font-size: 0.9em;
-      color: #FFD700;
-    }
-    footer {
-      background-color: #0A0A0A;
-      color: #FFD700;
-      text-align: center;
-      padding: 20px;
-      border-top: 2px solid #B8860B;
-      margin-top: 40px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nécrose Fragrances</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #0A0A0A;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #0A0A0A;
+  color: #FFD700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+header img {
+  height: 60px;
+  margin-right: 15px;
+}
+nav a {
+  color: #FFD700;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+.perfume-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px;
+  gap: 20px;
+}
+.perfume {
+  border: 1px solid #B8860B;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+}
+.perfume img {
+  width: 100%;
+  border-radius: 8px;
+}
+.perfume h3 {
+  color: #B8860B;
+  margin: 10px 0 5px 0;
+}
+.perfume p {
+  margin: 5px 0;
+}
+.perfume a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #B8860B;
+  color: #0A0A0A;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.perfume a:hover {
+  background-color: #FFD700;
+}
+footer {
+  background-color: #0A0A0A;
+  color: #FFD700;
+  text-align: center;
+  padding: 20px;
+}
+</style>
 </head>
 <body>
 
 <header>
-  Nécrose Fragrances
+  <div style="display:flex; align-items:center;">
+    <img src="images/20260403_113943_0000.png" alt="Nécrose Logo">
+    <h1>Nécrose Fragrances</h1>
+  </div>
   <nav>
     <a href="#">Home</a>
     <a href="#">Perfumes</a>
@@ -83,56 +95,63 @@
 </header>
 
 <section class="perfume-container">
+
   <div class="perfume">
-    <img src="perfume1.jpg" alt="Perfume 1">
-    <h3>Perfume 1</h3>
-    <p>Elegant scent that embodies sophistication. You Can't Wear It, It Becomes You.</p>
+    <img src="images/.trashed-1777790150-Black and Yellow Classic Perfume For Men Instagram Post_20260403_111558_0000.png" alt="Lazzy Girl">
+    <h3>Lazzy Girl</h3>
+    <p>Price: Rs 2,500</p>
+    <a href="https://wa.me/923021240354?text=I%20want%20to%20order%20Lazzy%20Girl" target="_blank">Order via WhatsApp</a>
   </div>
+
   <div class="perfume">
-    <img src="perfume2.jpg" alt="Perfume 2">
-    <h3>Perfume 2</h3>
-    <p>Rich aroma with a bold personality. You Can't Wear It, It Becomes You.</p>
+    <img src="images/.trashed-1777790150-Blue and White Dark Illustrative Elegant Perfume Product Instagram Post_20260403_111300_0000.png" alt="Lumine">
+    <h3>Lumine</h3>
+    <p>Price: Rs 2,500</p>
+    <a href="https://wa.me/923021240354?text=I%20want%20to%20order%20Lumine" target="_blank">Order via WhatsApp</a>
   </div>
+
   <div class="perfume">
-    <img src="perfume3.jpg" alt="Perfume 3">
-    <h3>Perfume 3</h3>
-    <p>Fresh and uplifting fragrance. You Can't Wear It, It Becomes You.</p>
+    <img src="images/Black and Red Minimalist Elegant Perfume Instagram Feed Ad_20260403_113816_0000.jpg" alt="BlackRose">
+    <h3>BlackRose</h3>
+    <p>Price: Rs 2,500</p>
+    <a href="https://wa.me/923021240354?text=I%20want%20to%20order%20BlackRose" target="_blank">Order via WhatsApp</a>
   </div>
+
   <div class="perfume">
-    <img src="perfume4.jpg" alt="Perfume 4">
-    <h3>Perfume 4</h3>
-    <p>Deep woody notes for the modern connoisseur. You Can't Wear It, It Becomes You.</p>
+    <img src="images/Black and White Minimalist Perfume Product Promo Your Story_20260403_113906_0000.jpg" alt="Kaptan">
+    <h3>Kaptan</h3>
+    <p>Price: Rs 2,500</p>
+    <a href="https://wa.me/923021240354?text=I%20want%20to%20order%20Kaptan" target="_blank">Order via WhatsApp</a>
   </div>
+
   <div class="perfume">
-    <img src="perfume5.jpg" alt="Perfume 5">
-    <h3>Perfume 5</h3>
-    <p>Soft floral tones that linger elegantly. You Can't Wear It, It Becomes You.</p>
+    <img src="images/Blue Modern Perfume Promotion Instagram Post_20260403_114057_0000.jpg" alt="Platinium">
+    <h3>Platinium</h3>
+    <p>Price: Rs 2,500</p>
+    <a href="https://wa.me/923021240354?text=I%20want%20to%20order%20Platinium" target="_blank">Order via WhatsApp</a>
   </div>
+
   <div class="perfume">
-    <img src="perfume6.jpg" alt="Perfume 6">
-    <h3>Perfume 6</h3>
-    <p>Intense oriental fragrance for evening wear. You Can't Wear It, It Becomes You.</p>
+    <img src="images/Green Simple New Arrival Perfume Instagram Post_20260403_113830_0000.jpg" alt="Intense You">
+    <h3>Intense You</h3>
+    <p>Price: Rs 2,500</p>
+    <a href="https://wa.me/923021240354?text=I%20want%20to%20order%20Intense%20You" target="_blank">Order via WhatsApp</a>
   </div>
+
   <div class="perfume">
-    <img src="perfume7.jpg" alt="Perfume 7">
-    <h3>Perfume 7</h3>
-    <p>Fresh citrus burst for a bold morning. You Can't Wear It, It Becomes You.</p>
+    <img src="images/New Perfume Instagram Post_20260403_114019_0000.jpg" alt="Mangny">
+    <h3>Mangny</h3>
+    <p>Price: Rs 2,500</p>
+    <a href="https://wa.me/923021240354?text=I%20want%20to%20order%20Mangny" target="_blank">Order via WhatsApp</a>
   </div>
+
   <div class="perfume">
-    <img src="perfume8.jpg" alt="Perfume 8">
-    <h3>Perfume 8</h3>
-    <p>Luxurious musky aroma for sophistication. You Can't Wear It, It Becomes You.</p>
+    <img src="images/Pink Luxury Perfume Sale Instagram Post_20260403_113934_0000.jpg" alt="Rose Bloom">
+    <h3>Rose Bloom</h3>
+    <p>Price: Rs 2,500</p>
+    <a href="https://wa.me/923021240354?text=I%20want%20to%20order%20Rose%20Bloom" target="_blank">Order via WhatsApp</a>
   </div>
-  <div class="perfume">
-    <img src="perfume9.jpg" alt="Perfume 9">
-    <h3>Perfume 9</h3>
-    <p>Subtle vanilla notes for elegance. You Can't Wear It, It Becomes You.</p>
-  </div>
-  <div class="perfume">
-    <img src="perfume10.jpg" alt="Perfume 10">
-    <h3>Perfume 10</h3>
-    <p>Bold leather fragrance for the daring soul. You Can't Wear It, It Becomes You.</p>
-  </div>
+
 </section>
 
 <footer>
@@ -141,20 +160,3 @@
 
 </body>
 </html>
-<section class="perfume-container">
-  <div class="perfume">
-    <img src="perfume1.jpg" alt="Perfume 1">
-    <h3>Perfume 1</h3>
-    <p>Elegant scent that embodies sophistication. You Can't Wear It, It Becomes You.</p>
-    <a href="https://wa.me/923021240254?text=I%20want%20to%20order%20Perfume%201" target="_blank" style="display:inline-block;margin-bottom:15px;padding:10px 20px;background-color:#B8860B;color:#0A0A0A;text-decoration:none;border-radius:8px;font-weight:bold;">Order via WhatsApp</a>
-  </div>
-  
-  <div class="perfume">
-    <img src="perfume2.jpg" alt="Perfume 2">
-    <h3>Perfume 2</h3>
-    <p>Rich aroma with a bold personality. You Can't Wear It, It Becomes You.</p>
-    <a href="https://wa.me/923021240254?text=I%20want%20to%20order%20Perfume%202" target="_blank" style="display:inline-block;margin-bottom:15px;padding:10px 20px;background-color:#B8860B;color:#0A0A0A;text-decoration:none;border-radius:8px;font-weight:bold;">Order via WhatsApp</a>
-  </div>
-
-  <!-- Same structure for Perfume 3 to 10, just change the text in WhatsApp link -->
-</section>
