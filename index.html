@@ -18,7 +18,7 @@ header {
     padding: 20px 0;
 }
 #logo {
-    width: 250px;
+    width: 300px;
     height: auto;
     margin-bottom: 10px;
 }
@@ -26,10 +26,10 @@ header {
 /* Announcement */
 #announcement {
     font-family: 'Chancery', cursive;
-    font-size: 18px;
+    font-size: 20px;
     color: #B8860B;
     margin-bottom: 20px;
-    animation: flash 5s infinite alternate;
+    animation: flash 8s infinite alternate;
 }
 @keyframes flash {
     0%,100%{opacity:1;}
@@ -47,7 +47,7 @@ header {
 /* Products Grid */
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     padding: 0 20px 50px;
     justify-items: center;
@@ -91,11 +91,19 @@ header {
     font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
-    animation: flashBtn 5s infinite alternate;
+    animation: flashBtn 8s infinite alternate;
 }
 @keyframes flashBtn {
     0%,100%{opacity:1;}
     50%{opacity:0.5;}
+}
+
+/* Footer / Refund Policy */
+footer {
+    background-color: #1a1a1a;
+    color: #FFD700;
+    padding: 20px;
+    font-size: 14px;
 }
 
 /* Responsive */
@@ -104,7 +112,7 @@ header {
     .product-card img { height: 200px; }
 }
 @media (max-width: 768px) {
-    .products { grid-template-columns: repeat(3, 1fr); }
+    .products { grid-template-columns: repeat(2, 1fr); }
     .product-card img { height: 180px; }
 }
 @media (max-width: 480px) {
@@ -177,6 +185,10 @@ header {
         <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
     </div>
 </div>
+
+<footer>
+    7 Days Refund Policy: If you are not satisfied with your product, you can request a full refund within 7 days of purchase.
+</footer>
 
 </body>
 </html>
