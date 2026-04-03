@@ -13,15 +13,17 @@ body {
   padding: 0;
 }
 
+/* Header and Logo */
 header {
   background-color: #0A0A0A;
   text-align: center;
   padding: 20px 0;
-  position: relative;
 }
 
 header img {
-  height: 100px; /* bigger logo */
+  height: 120px;
+  display: block;
+  margin: 0 auto;
 }
 
 .announcement {
@@ -33,13 +35,14 @@ header img {
 }
 
 @keyframes flash {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
+  0%,50%,100% {opacity:1;}
+  25%,75% {opacity:0;}
 }
 
+/* Navigation */
 nav {
   text-align: center;
-  margin: 15px 0;
+  margin-top: 15px;
 }
 
 nav a {
@@ -53,6 +56,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Perfume Section */
 .perfume-container {
   display: flex;
   flex-wrap: wrap;
@@ -108,6 +112,7 @@ nav a:hover {
   background-color: #FFD700;
 }
 
+/* Contact Section */
 .contact {
   background-color: #0A0A0A;
   color: #FFD700;
@@ -121,6 +126,7 @@ nav a:hover {
   font-weight: bold;
 }
 
+/* Footer */
 footer {
   background-color: #0A0A0A;
   color: #FFD700;
@@ -131,6 +137,7 @@ footer {
 </head>
 <body>
 
+<!-- Header -->
 <header>
   <img src="logo.png" alt="Nécrose Logo">
   <div id="announcement" class="announcement">Sale Live Grab Yours Now</div>
@@ -142,6 +149,7 @@ footer {
   </nav>
 </header>
 
+<!-- Perfumes -->
 <section class="perfume-container">
 
   <div class="perfume">
@@ -210,15 +218,18 @@ footer {
 
 </section>
 
+<!-- Contact -->
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
   <p>Phone/WhatsApp: <a href="tel:03021240254">03021240254</a> | <a href="https://wa.me/923021240254" target="_blank">Chat on WhatsApp</a></p>
 </section>
 
+<!-- Footer -->
 <footer>
   &copy; 2026 Nécrose Fragrances. All rights reserved.
 </footer>
 
+<!-- Announcement Script -->
 <script>
 let announcements = ["Sale Live Grab Yours Now", "YOU CAN'T WEAR IT, IT BECOMES YOU"];
 let index = 0;
