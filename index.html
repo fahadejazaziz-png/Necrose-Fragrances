@@ -57,20 +57,20 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Perfume Section */
+/* Perfume Section - 4 per row */
 .perfume-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  padding: 30px;
+  justify-items: center;
 }
 
 .perfume {
   border: 1px solid #B8860B;
   border-radius: 10px;
   padding: 15px;
-  width: 250px;
+  width: 100%;
   text-align: center;
   background-color: #0A0A0A;
 }
