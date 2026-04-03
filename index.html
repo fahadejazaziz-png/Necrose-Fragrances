@@ -5,111 +5,112 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nécrose Fragrances</title>
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #0a0a0a;
-        color: #FFD700;
-        text-align: center;
-    }
-    header {
-        padding: 20px 0;
-    }
-    #logo {
-        width: 200px;
-        height: auto;
-        margin-bottom: 10px;
-    }
-    #announcement {
-        font-family: 'Chancery', cursive;
-        font-size: 18px;
-        color: #B8860B;
-        margin-bottom: 20px;
-        animation: flash 5s infinite alternate;
-    }
-    @keyframes flash {
-        0%,100%{opacity:1;}
-        50%{opacity:0.3;}
-    }
-    #banner {
-        width: 100%;
-        max-height: 400px;
-        margin-bottom: 30px;
-        object-fit: cover;
-    }
-    .products {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 25px;
-        padding: 0 20px 50px;
-        justify-items: center;
-    }
-    .product-card {
-        background-color: #1a1a1a;
-        border-radius: 10px;
-        padding: 15px;
-        width: 100%;
-        max-width: 250px;
-        transition: transform 0.3s;
-    }
-    .product-card:hover {
-        transform: scale(1.05);
-    }
-    .product-card img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        border-radius: 8px;
-    }
-    .product-name {
-        margin: 10px 0 5px;
-        font-size: 16px;
-        font-weight: bold;
-        color: #FFD700;
-    }
-    .product-price {
-        color: #B8860B;
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-    .order-btn {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #FFD700;
-        color: #0a0a0a;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 5px;
-        animation: flashBtn 5s infinite alternate;
-    }
-    @keyframes flashBtn {
-        0%,100%{opacity:1;}
-        50%{opacity:0.5;}
-    }
-    @media (max-width: 1024px) {
-        .products {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .product-card img {
-            height: 180px;
-        }
-    }
-    @media (max-width: 768px) {
-        .products {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .product-card img {
-            height: 160px;
-        }
-    }
-    @media (max-width: 480px) {
-        .products {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        .product-card img {
-            height: 140px;
-        }
-    }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0a0a0a;
+    color: #FFD700;
+    text-align: center;
+}
+
+/* Header */
+header {
+    padding: 20px 0;
+}
+#logo {
+    width: 250px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Announcement */
+#announcement {
+    font-family: 'Chancery', cursive;
+    font-size: 18px;
+    color: #B8860B;
+    margin-bottom: 20px;
+    animation: flash 5s infinite alternate;
+}
+@keyframes flash {
+    0%,100%{opacity:1;}
+    50%{opacity:0.3;}
+}
+
+/* Banner */
+#banner {
+    width: 100%;
+    max-height: 400px;
+    margin-bottom: 30px;
+    object-fit: cover;
+}
+
+/* Products Grid */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 0 20px 50px;
+    justify-items: center;
+}
+.product-card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+}
+.product-card:hover {
+    transform: scale(1.05);
+}
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.product-name {
+    margin: 10px 0 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFD700;
+}
+.product-price {
+    color: #B8860B;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.order-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #0a0a0a;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    animation: flashBtn 5s infinite alternate;
+}
+@keyframes flashBtn {
+    0%,100%{opacity:1;}
+    50%{opacity:0.5;}
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .products { grid-template-columns: repeat(3, 1fr); }
+    .product-card img { height: 200px; }
+}
+@media (max-width: 768px) {
+    .products { grid-template-columns: repeat(3, 1fr); }
+    .product-card img { height: 180px; }
+}
+@media (max-width: 480px) {
+    .products { grid-template-columns: repeat(2, 1fr); }
+    .product-card img { height: 150px; }
+}
 </style>
 </head>
 <body>
@@ -121,58 +122,56 @@
     </div>
 </header>
 
-<!-- Banner Video -->
 <video id="banner" autoplay loop muted playsinline>
     <source src="banner.mp4" type="video/mp4">
     <img src="banner-fallback.jpg" alt="Banner">
 </video>
 
-<!-- Products Grid -->
 <div class="products">
     <div class="product-card">
-        <img src="blackrose.jpg" alt="BlackRose">
+        <img src="BlackRose.jpg" alt="BlackRose">
         <div class="product-name">BlackRose</div>
         <div class="product-price">PKR 2500</div>
         <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
     </div>
     <div class="product-card">
-        <img src="intenseyou.jpg" alt="IntenseYou">
+        <img src="IntenseYou.jpg" alt="IntenseYou">
         <div class="product-name">IntenseYou</div>
         <div class="product-price">PKR 2500</div>
         <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
     </div>
     <div class="product-card">
-        <img src="kaptan.jpg" alt="Kaptan">
+        <img src="Kaptan.jpg" alt="Kaptan">
         <div class="product-name">Kaptan</div>
         <div class="product-price">PKR 2500</div>
         <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
     </div>
     <div class="product-card">
-        <img src="lazzygirl.png" alt="LazzyGirl">
+        <img src="LazzyGirl.png" alt="LazzyGirl">
         <div class="product-name">LazzyGirl</div>
         <div class="product-price">PKR 2500</div>
         <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
     </div>
     <div class="product-card">
-        <img src="lumine.jpg" alt="Lumine">
+        <img src="Lumine.jpg" alt="Lumine">
         <div class="product-name">Lumine</div>
         <div class="product-price">PKR 2500</div>
         <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
     </div>
     <div class="product-card">
-        <img src="magny.jpg" alt="Magny">
+        <img src="Magny.jpg" alt="Magny">
         <div class="product-name">Magny</div>
         <div class="product-price">PKR 2500</div>
         <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
     </div>
     <div class="product-card">
-        <img src="platinium.jpg" alt="Platinium">
+        <img src="Platinium.jpg" alt="Platinium">
         <div class="product-name">Platinium</div>
         <div class="product-price">PKR 2500</div>
         <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
     </div>
     <div class="product-card">
-        <img src="rosebloom.jpg" alt="RoseBloom">
+        <img src="RoseBloom.jpg" alt="RoseBloom">
         <div class="product-name">RoseBloom</div>
         <div class="product-price">PKR 2500</div>
         <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
