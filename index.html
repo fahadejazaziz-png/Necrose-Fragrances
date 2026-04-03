@@ -17,7 +17,7 @@
     background-color: #0A0A0A;
   }
   #logo {
-    width: 200px;
+    width: 220px;
     display: block;
     margin: 0 auto;
   }
@@ -25,15 +25,9 @@
     font-family: 'Chancery', cursive;
     font-size: 24px;
     color: #B8860B;
-    margin-top: 10px;
-    animation: flash 10s infinite;
-  }
-  @keyframes flash {
-    0% {opacity: 1;}
-    45% {opacity: 0;}
-    50% {opacity: 1;}
-    95% {opacity: 0;}
-    100% {opacity: 1;}
+    margin-top: 10px; /* logo aur announcement ke beech ka gap */
+    transition: opacity 0.5s;
+    text-align: center;
   }
   #banner {
     width: 100%;
@@ -75,7 +69,6 @@
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    animation: flash 10s infinite;
   }
   footer {
     text-align: center;
@@ -96,7 +89,7 @@
 
 <header>
   <img id="logo" src="logo.png" alt="Nécrose Logo">
-  <div id="announcement">SALE LIVE – Grab Yours Now | YOU CAN'T WEAR IT, IT BECOMES YOU</div>
+  <div id="announcement"></div>
 </header>
 
 <img id="banner" src="banner.png" alt="VIP Banner">
@@ -109,7 +102,7 @@
     <a class="order-btn" href="https://wa.me/03021240254">Order Now</a>
   </div>
   <div class="product-card">
-    <img src="Intenseyou.jpg" alt="Intenseyou">
+    <img src="Intenseyou.jpg" alt="Intense You">
     <h3>Intense You</h3>
     <p>PKR 2500</p>
     <a class="order-btn" href="https://wa.me/03021240254">Order Now</a>
@@ -155,6 +148,27 @@
 <footer>
   <p>7 Days Refund Policy – If not satisfied, contact us via WhatsApp</p>
 </footer>
+
+<script>
+  const announcements = [
+    "SALE LIVE – Grab Yours Now",
+    "YOU CAN'T WEAR IT, IT BECOMES YOU"
+  ];
+  let index = 0;
+  const announcementDiv = document.getElementById('announcement');
+
+  function showAnnouncement() {
+    announcementDiv.style.opacity = 0;
+    setTimeout(() => {
+      announcementDiv.textContent = announcements[index];
+      announcementDiv.style.opacity = 1;
+      index = (index + 1) % announcements.length;
+    }, 500); // fade out 0.5s
+  }
+
+  showAnnouncement();
+  setInterval(showAnnouncement, 5000); // har 5 sec change
+</script>
 
 </body>
 </html>
