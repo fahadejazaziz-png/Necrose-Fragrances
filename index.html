@@ -5,189 +5,155 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nécrose Fragrances</title>
 <style>
-body {
+  body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #0a0a0a;
+    background-color: #000;
     color: #FFD700;
+  }
+  header {
     text-align: center;
-}
-
-/* Header */
-header {
     padding: 20px 0;
-}
-#logo {
-    width: 300px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-/* Announcement */
-#announcement {
+    background-color: #0A0A0A;
+  }
+  #logo {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+  #announcement {
     font-family: 'Chancery', cursive;
-    font-size: 20px;
+    font-size: 24px;
     color: #B8860B;
-    margin-bottom: 20px;
-    animation: flash 8s infinite alternate;
-}
-@keyframes flash {
-    0%,100%{opacity:1;}
-    50%{opacity:0.3;}
-}
-
-/* Banner */
-#banner {
+    margin-top: 10px;
+    animation: flash 10s infinite;
+  }
+  @keyframes flash {
+    0% {opacity: 1;}
+    45% {opacity: 0;}
+    50% {opacity: 1;}
+    95% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  #banner {
     width: 100%;
-    max-height: 400px;
-    margin-bottom: 30px;
+    max-height: 500px;
     object-fit: cover;
-}
-
-/* Products Grid */
-.products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    padding: 0 20px 50px;
-    justify-items: center;
-}
-.product-card {
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    padding: 15px;
-    width: 100%;
-    max-width: 250px;
+    display: block;
+    margin: 20px 0;
+  }
+  .products {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s;
-}
-.product-card:hover {
-    transform: scale(1.05);
-}
-.product-card img {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  .product-card {
+    background-color: #0A0A0A;
+    border: 1px solid #B8860B;
+    padding: 10px;
+    text-align: center;
+    flex: 1 1 calc(25% - 40px);
+    max-width: 250px;
+    box-sizing: border-box;
+  }
+  .product-card img {
     width: 100%;
-    height: 220px;
+    height: 250px;
     object-fit: cover;
-    border-radius: 8px;
-}
-.product-name {
-    margin: 10px 0 5px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #FFD700;
-}
-.product-price {
-    color: #B8860B;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-.order-btn {
+  }
+  .product-card h3, .product-card p {
+    margin: 5px 0;
+  }
+  .order-btn {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #FFD700;
-    color: #0a0a0a;
-    font-weight: bold;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: linear-gradient(45deg, #FFD700, #B8860B);
+    color: #000;
     text-decoration: none;
     border-radius: 5px;
-    animation: flashBtn 8s infinite alternate;
-}
-@keyframes flashBtn {
-    0%,100%{opacity:1;}
-    50%{opacity:0.5;}
-}
-
-/* Footer / Refund Policy */
-footer {
-    background-color: #1a1a1a;
-    color: #FFD700;
+    font-weight: bold;
+    animation: flash 10s infinite;
+  }
+  footer {
+    text-align: center;
     padding: 20px;
-    font-size: 14px;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .products { grid-template-columns: repeat(3, 1fr); }
-    .product-card img { height: 200px; }
-}
-@media (max-width: 768px) {
-    .products { grid-template-columns: repeat(2, 1fr); }
-    .product-card img { height: 180px; }
-}
-@media (max-width: 480px) {
-    .products { grid-template-columns: repeat(2, 1fr); }
-    .product-card img { height: 150px; }
-}
+    background-color: #0A0A0A;
+    color: #FFD700;
+    margin-top: 20px;
+  }
+  @media (max-width: 1024px) {
+    .product-card { flex: 1 1 calc(33.33% - 40px); }
+  }
+  @media (max-width: 768px) {
+    .product-card { flex: 1 1 calc(50% - 40px); }
+  }
 </style>
 </head>
 <body>
 
 <header>
-    <img id="logo" src="logo.png" alt="Necrose Logo">
-    <div id="announcement">
-        Sale Live Grab Yours Now | YOU CAN'T WEAR IT, IT BECOMES YOU
-    </div>
+  <img id="logo" src="logo.png" alt="Nécrose Logo">
+  <div id="announcement">SALE LIVE – Grab Yours Now | YOU CAN'T WEAR IT, IT BECOMES YOU</div>
 </header>
 
-<video id="banner" autoplay loop muted playsinline>
-    <source src="banner.mp4" type="video/mp4">
-    <img src="banner-fallback.jpg" alt="Banner">
-</video>
+<img id="banner" src="banner.png" alt="VIP Banner">
 
-<div class="products">
-    <div class="product-card">
-        <img src="BlackRose.jpg" alt="BlackRose">
-        <div class="product-name">BlackRose</div>
-        <div class="product-price">PKR 2500</div>
-        <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
-    </div>
-    <div class="product-card">
-        <img src="Intenseyou.jpg" alt="IntenseYou">
-        <div class="product-name">IntenseYou</div>
-        <div class="product-price">PKR 2500</div>
-        <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
-    </div>
-    <div class="product-card">
-        <img src="Kaptan.jpg" alt="Kaptan">
-        <div class="product-name">Kaptan</div>
-        <div class="product-price">PKR 2500</div>
-        <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
-    </div>
-    <div class="product-card">
-        <img src="LazzyGirl.png" alt="LazzyGirl">
-        <div class="product-name">LazzyGirl</div>
-        <div class="product-price">PKR 2500</div>
-        <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
-    </div>
-    <div class="product-card">
-        <img src="Lumine.jpg" alt="Lumine">
-        <div class="product-name">Lumine</div>
-        <div class="product-price">PKR 2500</div>
-        <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
-    </div>
-    <div class="product-card">
-        <img src="Magny.jpg" alt="Magny">
-        <div class="product-name">Magny</div>
-        <div class="product-price">PKR 2500</div>
-        <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
-    </div>
-    <div class="product-card">
-        <img src="Platinium.jpg" alt="Platinium">
-        <div class="product-name">Platinium</div>
-        <div class="product-price">PKR 2500</div>
-        <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
-    </div>
-    <div class="product-card">
-        <img src="Rose Bloom.jpg" alt="RoseBloom">
-        <div class="product-name">RoseBloom</div>
-        <div class="product-price">PKR 2500</div>
-        <a class="order-btn" href="https://wa.me/03021240254">Order via WhatsApp</a>
-    </div>
-</div>
+<section class="products">
+  <div class="product-card">
+    <img src="BlackRose.jpg" alt="BlackRose">
+    <h3>BlackRose</h3>
+    <p>PKR 2500</p>
+    <a class="order-btn" href="https://wa.me/03021240254">Order Now</a>
+  </div>
+  <div class="product-card">
+    <img src="Intenseyou.jpg" alt="Intense You">
+    <h3>Intense You</h3>
+    <p>PKR 2500</p>
+    <a class="order-btn" href="https://wa.me/03021240254">Order Now</a>
+  </div>
+  <div class="product-card">
+    <img src="Kaptan.jpg" alt="Kaptan">
+    <h3>Kaptan</h3>
+    <p>PKR 2500</p>
+    <a class="order-btn" href="https://wa.me/03021240254">Order Now</a>
+  </div>
+  <div class="product-card">
+    <img src="LazzyGirl.png" alt="Lazzy Girl">
+    <h3>Lazzy Girl</h3>
+    <p>PKR 2500</p>
+    <a class="order-btn" href="https://wa.me/03021240254">Order Now</a>
+  </div>
+  <div class="product-card">
+    <img src="Lumine.jpg" alt="Lumine">
+    <h3>Lumine</h3>
+    <p>PKR 2500</p>
+    <a class="order-btn" href="https://wa.me/03021240254">Order Now</a>
+  </div>
+  <div class="product-card">
+    <img src="Magny.jpg" alt="Mangny">
+    <h3>Mangny</h3>
+    <p>PKR 2500</p>
+    <a class="order-btn" href="https://wa.me/03021240254">Order Now</a>
+  </div>
+  <div class="product-card">
+    <img src="Platinium.jpg" alt="Platinium">
+    <h3>Platinium</h3>
+    <p>PKR 2500</p>
+    <a class="order-btn" href="https://wa.me/03021240254">Order Now</a>
+  </div>
+  <div class="product-card">
+    <img src="Rose Bloom.jpg" alt="Rose Bloom">
+    <h3>Rose Bloom</h3>
+    <p>PKR 2500</p>
+    <a class="order-btn" href="https://wa.me/03021240254">Order Now</a>
+  </div>
+</section>
 
 <footer>
-    7 Days Refund Policy: If you are not satisfied with your product, you can request a full refund within 7 days of purchase.
+  <p>7 Days Refund Policy – If not satisfied, contact us via WhatsApp</p>
 </footer>
 
 </body>
