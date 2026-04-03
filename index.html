@@ -7,136 +7,154 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0A0A0A;
+      font-family: 'Arial', sans-serif;
+      background-color: #0A0A0A;
       color: #FFD700;
     }
     header {
+      background-color: #0A0A0A;
+      padding: 20px;
       text-align: center;
-      padding: 50px 20px;
-      font-size: 48px;
+      font-size: 2em;
+      letter-spacing: 2px;
+      border-bottom: 2px solid #B8860B;
+    }
+    nav a {
+      color: #FFD700;
+      text-decoration: none;
+      margin: 0 15px;
       font-weight: bold;
     }
-    .tagline {
-      text-align: center;
-      color: white;
-      font-size: 18px;
-      margin-top: -20px;
+    nav a:hover {
+      color: #B8860B;
     }
-    .products {
+    .perfume-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 50px 20px;
-      justify-items: center;
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
     }
-    .card {
-      background: #111;
-      border-radius: 15px;
-      width: 250px;
-      padding: 20px;
+    .perfume {
+      background-color: #111;
+      border: 1px solid #B8860B;
+      border-radius: 12px;
+      overflow: hidden;
       text-align: center;
       transition: transform 0.3s;
     }
-    .card:hover {
-      transform: translateY(-10px);
+    .perfume:hover {
+      transform: scale(1.05);
     }
-    .card h3 {
-      margin: 10px 0;
-      font-size: 22px;
+    .perfume img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
     }
-    .card p {
-      color: #FFFFFF;
-      font-size: 16px;
+    .perfume h3 {
+      margin: 10px 0 5px 0;
     }
-    .card button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      border: none;
-      background: #FFD700;
-      color: black;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-    .card button:hover {
-      background: #B8860B;
+    .perfume p {
+      padding: 0 10px 10px 10px;
+      font-size: 0.9em;
+      color: #FFD700;
     }
     footer {
+      background-color: #0A0A0A;
+      color: #FFD700;
       text-align: center;
-      padding: 30px;
-      color: white;
-      font-size: 14px;
-      background: #0A0A0A;
-    }
-    @media (max-width: 600px) {
-      header { font-size: 36px; }
-      .tagline { font-size: 16px; }
+      padding: 20px;
+      border-top: 2px solid #B8860B;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-<header>Nécrose</header>
-<p class="tagline">You Can't Wear It, It Becomes You</p>
+<header>
+  Nécrose Fragrances
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Perfumes</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
 
-<div class="products">
-  <div class="card">
-    <h3>Midnight Oud</h3>
-    <p>Dark. Deep. Powerful.</p>
-    <button>Order Now</button>
+<section class="perfume-container">
+  <div class="perfume">
+    <img src="perfume1.jpg" alt="Perfume 1">
+    <h3>Perfume 1</h3>
+    <p>Elegant scent that embodies sophistication. You Can't Wear It, It Becomes You.</p>
   </div>
-  <div class="card">
-    <h3>Golden Smoke</h3>
-    <p>Warm. Rich. Addictive.</p>
-    <button>Order Now</button>
+  <div class="perfume">
+    <img src="perfume2.jpg" alt="Perfume 2">
+    <h3>Perfume 2</h3>
+    <p>Rich aroma with a bold personality. You Can't Wear It, It Becomes You.</p>
   </div>
-  <div class="card">
-    <h3>Velvet Noir</h3>
-    <p>Soft. Seductive. Timeless.</p>
-    <button>Order Now</button>
+  <div class="perfume">
+    <img src="perfume3.jpg" alt="Perfume 3">
+    <h3>Perfume 3</h3>
+    <p>Fresh and uplifting fragrance. You Can't Wear It, It Becomes You.</p>
   </div>
-  <div class="card">
-    <h3>Amber Eclipse</h3>
-    <p>Earthy. Mystical. Bold.</p>
-    <button>Order Now</button>
+  <div class="perfume">
+    <img src="perfume4.jpg" alt="Perfume 4">
+    <h3>Perfume 4</h3>
+    <p>Deep woody notes for the modern connoisseur. You Can't Wear It, It Becomes You.</p>
   </div>
-  <div class="card">
-    <h3>Crimson Rose</h3>
-    <p>Floral. Elegant. Intense.</p>
-    <button>Order Now</button>
+  <div class="perfume">
+    <img src="perfume5.jpg" alt="Perfume 5">
+    <h3>Perfume 5</h3>
+    <p>Soft floral tones that linger elegantly. You Can't Wear It, It Becomes You.</p>
   </div>
-  <div class="card">
-    <h3>Silver Mist</h3>
-    <p>Fresh. Clean. Uplifting.</p>
-    <button>Order Now</button>
+  <div class="perfume">
+    <img src="perfume6.jpg" alt="Perfume 6">
+    <h3>Perfume 6</h3>
+    <p>Intense oriental fragrance for evening wear. You Can't Wear It, It Becomes You.</p>
   </div>
-  <div class="card">
-    <h3>Dark Vanilla</h3>
-    <p>Sweet. Warm. Alluring.</p>
-    <button>Order Now</button>
+  <div class="perfume">
+    <img src="perfume7.jpg" alt="Perfume 7">
+    <h3>Perfume 7</h3>
+    <p>Fresh citrus burst for a bold morning. You Can't Wear It, It Becomes You.</p>
   </div>
-  <div class="card">
-    <h3>Ocean Whisper</h3>
-    <p>Cool. Crisp. Inviting.</p>
-    <button>Order Now</button>
+  <div class="perfume">
+    <img src="perfume8.jpg" alt="Perfume 8">
+    <h3>Perfume 8</h3>
+    <p>Luxurious musky aroma for sophistication. You Can't Wear It, It Becomes You.</p>
   </div>
-  <div class="card">
-    <h3>Spiced Amber</h3>
-    <p>Exotic. Fiery. Unique.</p>
-    <button>Order Now</button>
+  <div class="perfume">
+    <img src="perfume9.jpg" alt="Perfume 9">
+    <h3>Perfume 9</h3>
+    <p>Subtle vanilla notes for elegance. You Can't Wear It, It Becomes You.</p>
   </div>
-  <div class="card">
-    <h3>Black Orchid</h3>
-    <p>Dark. Mysterious. Elegant.</p>
-    <button>Order Now</button>
+  <div class="perfume">
+    <img src="perfume10.jpg" alt="Perfume 10">
+    <h3>Perfume 10</h3>
+    <p>Bold leather fragrance for the daring soul. You Can't Wear It, It Becomes You.</p>
   </div>
-</div>
+</section>
 
 <footer>
-  © 2026 Nécrose Fragrances. All Rights Reserved.
+  &copy; 2026 Nécrose Fragrances. All rights reserved.
 </footer>
 
 </body>
 </html>
+<section class="perfume-container">
+  <div class="perfume">
+    <img src="perfume1.jpg" alt="Perfume 1">
+    <h3>Perfume 1</h3>
+    <p>Elegant scent that embodies sophistication. You Can't Wear It, It Becomes You.</p>
+    <a href="https://wa.me/923021240254?text=I%20want%20to%20order%20Perfume%201" target="_blank" style="display:inline-block;margin-bottom:15px;padding:10px 20px;background-color:#B8860B;color:#0A0A0A;text-decoration:none;border-radius:8px;font-weight:bold;">Order via WhatsApp</a>
+  </div>
+  
+  <div class="perfume">
+    <img src="perfume2.jpg" alt="Perfume 2">
+    <h3>Perfume 2</h3>
+    <p>Rich aroma with a bold personality. You Can't Wear It, It Becomes You.</p>
+    <a href="https://wa.me/923021240254?text=I%20want%20to%20order%20Perfume%202" target="_blank" style="display:inline-block;margin-bottom:15px;padding:10px 20px;background-color:#B8860B;color:#0A0A0A;text-decoration:none;border-radius:8px;font-weight:bold;">Order via WhatsApp</a>
+  </div>
+
+  <!-- Same structure for Perfume 3 to 10, just change the text in WhatsApp link -->
+</section>
