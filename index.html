@@ -7,30 +7,45 @@
 <style>
 body {
   font-family: Arial, sans-serif;
-  background-color: #0A0A0A; /* black background */
-  color: #FFD700; /* gold text */
+  background-color: #0A0A0A;
+  color: #FFD700;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: #0A0A0A; 
-  color: #FFD700;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 30px;
+  background-color: #0A0A0A;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
 }
 
 header img {
-  height: 60px;
-  margin-right: 15px;
+  height: 100px; /* bigger logo */
+}
+
+.announcement {
+  color: #FFFFFF;
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: bold;
+  animation: flash 1s infinite;
+}
+
+@keyframes flash {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+nav {
+  text-align: center;
+  margin: 15px 0;
 }
 
 nav a {
   color: #FFD700;
   text-decoration: none;
-  margin-left: 20px;
+  margin: 0 15px;
   font-weight: bold;
 }
 
@@ -57,8 +72,8 @@ nav a:hover {
 
 .perfume img {
   width: 100%;
-  height: 250px; /* fixed height for all images */
-  object-fit: cover; /* maintain aspect ratio and crop excess */
+  height: 250px;
+  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -117,10 +132,8 @@ footer {
 <body>
 
 <header>
-  <div style="display:flex; align-items:center;">
-    <img src="logo.png" alt="Nécrose Logo">
-    <h1>Nécrose Fragrances</h1>
-  </div>
+  <img src="logo.png" alt="Nécrose Logo">
+  <div id="announcement" class="announcement">Sale Live Grab Yours Now</div>
   <nav>
     <a href="#">Home</a>
     <a href="#">Perfumes</a>
@@ -205,6 +218,15 @@ footer {
 <footer>
   &copy; 2026 Nécrose Fragrances. All rights reserved.
 </footer>
+
+<script>
+let announcements = ["Sale Live Grab Yours Now", "YOU CAN'T WEAR IT, IT BECOMES YOU"];
+let index = 0;
+setInterval(() => {
+  index = (index + 1) % announcements.length;
+  document.getElementById("announcement").textContent = announcements[index];
+}, 5000);
+</script>
 
 </body>
 </html>
