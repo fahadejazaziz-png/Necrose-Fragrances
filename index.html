@@ -14,7 +14,7 @@ body {
 }
 
 header {
-  background-color: #0A0A0A; /* black header */
+  background-color: #0A0A0A; 
   color: #FFD700;
   display: flex;
   align-items: center;
@@ -52,11 +52,13 @@ nav a:hover {
   padding: 15px;
   width: 250px;
   text-align: center;
-  background-color: #0A0A0A; /* black card background */
+  background-color: #0A0A0A;
 }
 
 .perfume img {
   width: 100%;
+  height: 250px; /* fixed height for all images */
+  object-fit: cover; /* maintain aspect ratio and crop excess */
   border-radius: 8px;
 }
 
@@ -91,6 +93,19 @@ nav a:hover {
   background-color: #FFD700;
 }
 
+.contact {
+  background-color: #0A0A0A;
+  color: #FFD700;
+  text-align: center;
+  padding: 30px;
+}
+
+.contact a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 footer {
   background-color: #0A0A0A;
   color: #FFD700;
@@ -103,14 +118,14 @@ footer {
 
 <header>
   <div style="display:flex; align-items:center;">
-    <img src="20260403_123507_0000.png" alt="Nécrose Logo">
+    <img src="logo.png" alt="Nécrose Logo">
     <h1>Nécrose Fragrances</h1>
   </div>
   <nav>
     <a href="#">Home</a>
     <a href="#">Perfumes</a>
     <a href="#">About</a>
-    <a href="#">Contact</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
@@ -180,6 +195,11 @@ footer {
     <a href="https://wa.me/923021240254?text=I%20want%20to%20order%20Rose%20Bloom" target="_blank">Order via WhatsApp</a>
   </div>
 
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>Phone/WhatsApp: <a href="tel:03021240254">03021240254</a> | <a href="https://wa.me/923021240254" target="_blank">Chat on WhatsApp</a></p>
 </section>
 
 <footer>
