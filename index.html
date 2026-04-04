@@ -32,12 +32,20 @@ header {
   -webkit-text-fill-color: transparent;
   animation: shine 3s linear infinite;
 }
+#banner-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
 #banner {
   width:100%;
-  max-height:300px;
-  object-fit:contain;
   display:block;
-  margin:10px auto;
+  animation: banner-shine 10s linear infinite;
+}
+@keyframes banner-shine {
+  0% {filter: brightness(1);}
+  50% {filter: brightness(1.2);}
+  100% {filter: brightness(1);}
 }
 .products {
   display:grid;
@@ -114,7 +122,9 @@ footer a {color:#FFD700; text-decoration:none; margin:0 5px;}
   <div id="announcement">SALE LIVE - YOU CAN'T WEAR IT, IT BECOMES YOU</div>
 </header>
 
-<img id="banner" src="banner.png" alt="Banner">
+<div id="banner-container">
+  <img id="banner" src="banner.png" alt="Banner">
+</div>
 
 <section class="products">
   <div class="product-card">
@@ -150,7 +160,7 @@ footer a {color:#FFD700; text-decoration:none; margin:0 5px;}
   <div class="product-card">
     <img src="Magny.jpg" alt="Magny">
     <h3>Magny</h3>
-    <p>PKR 3500</p>
+    <p>PKR 2500</p>
     <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
   </div>
   <div class="product-card">
@@ -160,9 +170,9 @@ footer a {color:#FFD700; text-decoration:none; margin:0 5px;}
     <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
   </div>
   <div class="product-card">
-    <img src="Rose Bloom.jpg" alt="Rose Bloom">
+    <img src="RoseBloom.jpg" alt="Rose Bloom">
     <h3>Rose Bloom</h3>
-    <p>PKR 2999</p>
+    <p>PKR 2500</p>
     <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
   </div>
 </section>
