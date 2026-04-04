@@ -9,7 +9,7 @@ body {
   margin:0;
   font-family: Arial, sans-serif;
   background: #0A0A0A;
-  color: #FFD700;
+  color: #B8860B;
 }
 header {
   text-align:center;
@@ -23,29 +23,24 @@ header {
 }
 #announcement {
   font-family:'Chancery', cursive;
-  font-size:16px;
+  font-size:18px;
   font-weight:bold;
   margin-top:5px;
-  background: linear-gradient(90deg, #FFD700, #B8860B, #FFD700);
+  background: linear-gradient(90deg, #B8860B, #FFD700, #B8860B);
   background-size:200% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
+  animation: shine 5s linear infinite;
 }
 #banner-container {
-  position: relative;
   width: 100%;
   overflow: hidden;
 }
 #banner {
   width:100%;
+  max-height:400px;
+  object-fit:cover;
   display:block;
-  animation: banner-shine 10s linear infinite;
-}
-@keyframes banner-shine {
-  0% {filter: brightness(1);}
-  50% {filter: brightness(1.2);}
-  100% {filter: brightness(1);}
 }
 .products {
   display:grid;
@@ -60,7 +55,7 @@ header {
 }
 .product-card {
   background:#0A0A0A;
-  border:1px solid #FFD700;
+  border:1px solid #B8860B;
   padding:10px;
   text-align:center;
   overflow:hidden;
@@ -68,7 +63,7 @@ header {
 }
 .product-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 25px #FFD700, 0 0 40px #B8860B inset;
+  box-shadow: 0 0 25px #B8860B, 0 0 40px #FFD700 inset;
 }
 .product-card img {
   width:100%;
@@ -79,8 +74,8 @@ header {
 .product-card h3 {
   margin:5px 0;
   font-size:16px;
-  color:#FFD700;
-  background: linear-gradient(90deg, #FFD700, #B8860B, #FFD700);
+  color:#B8860B;
+  background: linear-gradient(90deg, #B8860B, #FFD700, #B8860B);
   background-size:200% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -88,7 +83,7 @@ header {
   font-weight:bold;
 }
 .order-btn {
-  background:#FFD700;
+  background:#B8860B;
   color:#0A0A0A;
   padding:8px 12px;
   border:none;
@@ -99,16 +94,16 @@ header {
 }
 .order-btn:hover {
   transform: scale(1.08);
-  background:#B8860B;
+  background:#FFD700;
 }
 footer {
   background:#111;
-  color:#FFD700;
+  color:#B8860B;
   padding:15px;
   text-align:center;
   font-size:14px;
 }
-footer a {color:#FFD700; text-decoration:none; margin:0 5px;}
+footer a {color:#B8860B; text-decoration:none; margin:0 5px;}
 @keyframes shine {
   0% {background-position: 200% 0;}
   100% {background-position: -200% 0;}
@@ -146,33 +141,9 @@ footer a {color:#FFD700; text-decoration:none; margin:0 5px;}
     <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
   </div>
   <div class="product-card">
-    <img src="LazzyGirl.png" alt="Lazzy Girl">
-    <h3>Lazzy Girl</h3>
+    <img src="Bronze.jpg" alt="Bronze">
+    <h3>Bronze</h3>
     <p>PKR 2500</p>
-    <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
-  </div>
-  <div class="product-card">
-    <img src="Lumine.jpg" alt="Lumine">
-    <h3>Lumine</h3>
-    <p>PKR 2500</p>
-    <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
-  </div>
-  <div class="product-card">
-    <img src="Magny.jpg" alt="Magny">
-    <h3>Magny</h3>
-    <p>PKR 3500</p>
-    <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
-  </div>
-  <div class="product-card">
-    <img src="Platinium.jpg" alt="Platinium">
-    <h3>Platinium</h3>
-    <p>PKR 2500</p>
-    <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
-  </div>
-  <div class="product-card">
-    <img src="Rose Bloom.jpg" alt="Rose Bloom">
-    <h3>Rose Bloom</h3>
-    <p>PKR 2999</p>
     <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
   </div>
 </section>
@@ -185,10 +156,10 @@ WhatsApp: <a href="https://wa.me/03021240254">03021240254</a> |
 </footer>
 
 <script>
-// Announcement flashing every 5 seconds
+// Announcement flashing every 5 seconds with moving effect
 const announcements = [
-  "SALE LIVE - YOU CAN'T WEAR IT, IT BECOMES YOU",
-  "GRAB YOURS NOW"
+  "ꜱᴀʟᴇ ʟɪᴠᴇ ɢʀᴀʙ ʏᴏᴜʀꜱ ɴᴏᴡ",
+"ʏᴏᴜ ᴄᴀɴ'ᴛ ᴡᴇᴀʀ ɪᴛ ɪᴛ ʙᴇᴄᴏᴍᴇꜱ ʏᴏᴜ"
 ];
 let idx = 0;
 const annDiv = document.getElementById("announcement");
