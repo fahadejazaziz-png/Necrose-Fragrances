@@ -18,13 +18,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 30px;
+  padding: 5px 25px;
   background: #fff;
 }
 
-/* LOGO */
 .logo img {
-  height: 110px;
+  height: 150px;
 }
 
 /* NAV */
@@ -39,20 +38,39 @@ nav a {
   background: #0077cc;
   color: #fff;
   text-align: center;
-  padding: 8px;
-}
-
-/* SLIM BANNER */
-.banner {
+  height: 35px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  background: #000;
-  padding: 5px 0;
+  overflow: hidden;
+  position: relative;
 }
 
+.announcement span {
+  position: absolute;
+  opacity: 0;
+  animation: fadeText 16s infinite;
+  font-size: 14px;
+}
+
+.announcement span:nth-child(1){ animation-delay: 0s; }
+.announcement span:nth-child(2){ animation-delay: 4s; }
+.announcement span:nth-child(3){ animation-delay: 8s; }
+.announcement span:nth-child(4){ animation-delay: 12s; }
+
+@keyframes fadeText {
+  0% { opacity: 0; transform: translateY(10px); }
+  5% { opacity: 1; transform: translateY(0); }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* BANNER */
 .banner img {
-  height: 90px;
-  width: auto;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* PRODUCTS */
@@ -63,7 +81,6 @@ nav a {
   gap: 20px;
 }
 
-/* CARD */
 .product-card {
   border: 1px solid #eee;
   border-radius: 10px;
@@ -76,7 +93,6 @@ nav a {
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* IMAGE */
 .product-card img {
   width: 100%;
   height: 240px;
@@ -84,31 +100,19 @@ nav a {
   padding: 10px;
 }
 
-/* INFO */
 .product-info {
   text-align: center;
   padding: 12px;
 }
 
-.product-info h3 {
+.price {
+  color: #0077cc;
+  font-weight: bold;
   margin-bottom: 8px;
 }
 
-/* PRICE ROW */
-.price-row {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  align-items: center;
-}
-
-.price-row span {
-  font-weight: bold;
-  color: #0077cc;
-}
-
-/* BUTTON */
 .order-btn {
+  display: inline-block;
   background: #0077cc;
   color: #fff;
   padding: 6px 12px;
@@ -117,14 +121,51 @@ nav a {
   font-size: 13px;
 }
 
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: #fff;
+  padding: 25px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer .links {
+  margin-bottom: 10px;
+}
+
+footer .links a {
+  color: #ccc;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+footer .links a:hover {
+  color: #fff;
+}
+
+footer p {
+  font-size: 13px;
+  color: #aaa;
+}
+
 /* MOBILE */
 @media(max-width:768px){
   .logo img {
-    height: 85px;
-  }
-
-  .banner img {
-    height: 70px;
+    height: 110px;
   }
 }
 </style>
@@ -146,7 +187,10 @@ nav a {
 </header>
 
 <div class="announcement">
-  🔥 Free Shipping | Premium Fragrances | Order Now 🔥
+  <span>You Can't Wear It, It Becomes You</span>
+  <span>Premium Presents</span>
+  <span>Order Now</span>
+  <span>Buy Any 2 Perfumes & Get 20% Off</span>
 </div>
 
 <div class="banner">
@@ -155,95 +199,90 @@ nav a {
 
 <section class="products">
 
-  <div class="product-card">
-    <img src="BlackRose.jpg">
-    <div class="product-info">
-      <h3>Black Rose</h3>
-      <div class="price-row">
-        <span>2500 PKR</span>
-        <a class="order-btn" href="https://wa.me/923021240254?text=Black Rose">Order</a>
-      </div>
-    </div>
-  </div>
+<div class="product-card">
+<img src="BlackRose.jpg">
+<div class="product-info">
+<h3>Black Rose</h3>
+<div class="price">2500 PKR</div>
+<a class="order-btn" href="https://wa.me/923021240254?text=Black Rose">Order Now</a>
+</div>
+</div>
 
-  <div class="product-card">
-    <img src="Intenseyou.jpg">
-    <div class="product-info">
-      <h3>Intense You</h3>
-      <div class="price-row">
-        <span>2500 PKR</span>
-        <a class="order-btn" href="https://wa.me/923021240254?text=Intense You">Order</a>
-      </div>
-    </div>
-  </div>
+<div class="product-card">
+<img src="Intenseyou.jpg">
+<div class="product-info">
+<h3>Intense You</h3>
+<div class="price">2500 PKR</div>
+<a class="order-btn" href="https://wa.me/923021240254?text=Intense You">Order Now</a>
+</div>
+</div>
 
-  <div class="product-card">
-    <img src="Kaptan.jpg">
-    <div class="product-info">
-      <h3>Kaptan</h3>
-      <div class="price-row">
-        <span>2500 PKR</span>
-        <a class="order-btn" href="https://wa.me/923021240254?text=Kaptan">Order</a>
-      </div>
-    </div>
-  </div>
+<div class="product-card">
+<img src="Kaptan.jpg">
+<div class="product-info">
+<h3>Kaptan</h3>
+<div class="price">2500 PKR</div>
+<a class="order-btn" href="https://wa.me/923021240254?text=Kaptan">Order Now</a>
+</div>
+</div>
 
-  <div class="product-card">
-    <img src="LazzyGirl.png">
-    <div class="product-info">
-      <h3>Lazzy Girl</h3>
-      <div class="price-row">
-        <span>2500 PKR</span>
-        <a class="order-btn" href="https://wa.me/923021240254?text=Lazzy Girl">Order</a>
-      </div>
-    </div>
-  </div>
+<div class="product-card">
+<img src="LazzyGirl.png">
+<div class="product-info">
+<h3>Lazzy Girl</h3>
+<div class="price">2500 PKR</div>
+<a class="order-btn" href="https://wa.me/923021240254?text=Lazzy Girl">Order Now</a>
+</div>
+</div>
 
-  <div class="product-card">
-    <img src="Lumine.jpg">
-    <div class="product-info">
-      <h3>Lumine</h3>
-      <div class="price-row">
-        <span>2500 PKR</span>
-        <a class="order-btn" href="https://wa.me/923021240254?text=Lumine">Order</a>
-      </div>
-    </div>
-  </div>
+<div class="product-card">
+<img src="Lumine.jpg">
+<div class="product-info">
+<h3>Lumine</h3>
+<div class="price">2500 PKR</div>
+<a class="order-btn" href="https://wa.me/923021240254?text=Lumine">Order Now</a>
+</div>
+</div>
 
-  <div class="product-card">
-    <img src="Magny.jpg">
-    <div class="product-info">
-      <h3>Magny</h3>
-      <div class="price-row">
-        <span>2500 PKR</span>
-        <a class="order-btn" href="https://wa.me/923021240254?text=Magny">Order</a>
-      </div>
-    </div>
-  </div>
+<div class="product-card">
+<img src="Magny.jpg">
+<div class="product-info">
+<h3>Magny</h3>
+<div class="price">2500 PKR</div>
+<a class="order-btn" href="https://wa.me/923021240254?text=Magny">Order Now</a>
+</div>
+</div>
 
-  <div class="product-card">
-    <img src="Platinium.jpg">
-    <div class="product-info">
-      <h3>Platinium</h3>
-      <div class="price-row">
-        <span>2500 PKR</span>
-        <a class="order-btn" href="https://wa.me/923021240254?text=Platinium">Order</a>
-      </div>
-    </div>
-  </div>
+<div class="product-card">
+<img src="Platinium.jpg">
+<div class="product-info">
+<h3>Platinium</h3>
+<div class="price">2500 PKR</div>
+<a class="order-btn" href="https://wa.me/923021240254?text=Platinium">Order Now</a>
+</div>
+</div>
 
-  <div class="product-card">
-    <img src="Rose Bloom.jpg">
-    <div class="product-info">
-      <h3>Rose Bloom</h3>
-      <div class="price-row">
-        <span>2500 PKR</span>
-        <a class="order-btn" href="https://wa.me/923021240254?text=Rose Bloom">Order</a>
-      </div>
-    </div>
-  </div>
+<div class="product-card">
+<img src="Rose Bloom.jpg">
+<div class="product-info">
+<h3>Rose Bloom</h3>
+<div class="price">2500 PKR</div>
+<a class="order-btn" href="https://wa.me/923021240254?text=Rose Bloom">Order Now</a>
+</div>
+</div>
 
 </section>
+
+<footer>
+  <div class="links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Refund Policy</a>
+    <a href="#">Terms & Conditions</a>
+  </div>
+  <p>© 2026 Necrose Fragrances. All Rights Reserved.</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/923021240254">WhatsApp</a>
 
 </body>
 </html>
