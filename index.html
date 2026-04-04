@@ -17,25 +17,26 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 20px; /* tight spacing */
+  padding: 8px 20px;
   background: #fff;
   border-bottom: 1px solid #eee;
 }
 
-/* LOGO (perfect balance) */
+/* LOGO (UPDATED BIGGER) */
 header .logo img {
-  height: 110px;
+  height: 130px;
   width: auto;
-  max-width: 220px;
+  max-width: 240px;
   object-fit: contain;
 }
 
-/* NAV */
+/* NAV (IMPROVED) */
 header nav a {
   color: #000;
   text-decoration: none;
-  margin-left: 15px;
-  font-size: 14px;
+  margin-left: 20px;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 /* MOBILE */
@@ -45,12 +46,12 @@ header nav a {
   }
 
   header .logo img {
-    height: 85px;
-    max-width: 180px;
+    height: 95px;
+    max-width: 200px;
   }
 }
 
-/* ANNOUNCEMENT */
+/* ANNOUNCEMENT (IMPROVED) */
 .announcement {
   width: 100%;
   background: #0077cc;
@@ -58,6 +59,8 @@ header nav a {
   padding: 10px 0;
   text-align: center;
   font-size: 14px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -79,12 +82,11 @@ header nav a {
   transform: translateX(40px);
 }
 
-/* BANNER */
+/* BANNER (FIXED - NO BLACK GAP) */
 .banner {
   width: 100%;
   height: 300px;
-  background: url('banner[1].png') center/contain no-repeat;
-  background-color: #000; /* gap hide */
+  background: url('banner[1].png') center/cover no-repeat;
   margin: 0;
 }
 
@@ -189,7 +191,7 @@ footer {
 <!-- ANNOUNCEMENT -->
 <div class="announcement">
   <div class="announcement-text" id="announcementText">
-    Free Shipping on All Orders!
+    You Can't Wear It, It Becomes You
   </div>
 </div>
 
@@ -261,7 +263,8 @@ cards.forEach(card => observer.observe(card));
 /* ANNOUNCEMENT ROTATION */
 const texts = [
   "You Can't Wear It, It Becomes You",
-  "Grab Your Now",
+  "Buy Any 3 Fragrances and Get 25% Off",
+  "Grabs Your Now...,
   "Limited Stock Available!"
 ];
 
