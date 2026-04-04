@@ -34,32 +34,10 @@ header {
   text-shadow: 0 0 5px #FFD700, 0 0 10px #B8860B, 0 0 20px #FFD700;
 }
 
-/* SHINE */
-.shine {
-  position: relative;
-  overflow: hidden;
-}
-.shine::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,215,0,0.6), transparent);
-  animation: shineMove 3s infinite;
-}
-@keyframes shineMove {
-  0% { left: -75%; }
-  100% { left: 125%; }
-}
-
-/* BANNER FIXED */
+/* BANNER FIX */
 #banner {
   width: 100%;
-  height: auto;
-  max-height: 350px;
-  object-fit: contain;
+  height: auto;        /* no crop */
   display: block;
 }
 
@@ -94,20 +72,25 @@ header {
   gap: 18px;
   padding: 15px;
 }
+
 .product {
   background: #111;
   padding: 10px;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .product:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 0 15px #FFD700;
 }
+
+/* IMAGE FIX NO CROP */
 .product img {
   width: 100%;
   height: 180px;
-  object-fit: cover;
+  object-fit: contain;   /* full image show */
+  background: #000;      /* black fill for empty space */
 }
 
 /* NAME BRONZE */
@@ -126,8 +109,8 @@ header {
   text-decoration: none;
   border-radius: 4px;
   font-weight: bold;
-  transition: 0.3s;
 }
+
 .order-btn:hover {
   box-shadow: 0 0 10px #FFD700;
 }
@@ -163,10 +146,10 @@ footer {
   </div>
 
   <img id="logo" src="logo.png">
-  <div id="announcement" class="shine"></div>
+  <div id="announcement"></div>
 </header>
 
-<img id="banner" src="banner.png" class="shine">
+<img id="banner" src="banner.png">
 
 <div class="products">
 
@@ -201,14 +184,14 @@ footer {
 <div class="product">
 <img src="Lumine.jpg">
 <p>Lumine</p>
-<p>PKR 3500</p>
+<p>PKR 2500</p>
 <a class="order-btn" href="https://wa.me/03021240254?text=Hi%20I%20want%20to%20order%20Lumine">Order Now</a>
 </div>
 
 <div class="product">
 <img src="Magny.jpg">
 <p>Magny</p>
-<p>PKR 3500</p>
+<p>PKR 2500</p>
 <a class="order-btn" href="https://wa.me/03021240254?text=Hi%20I%20want%20to%20order%20Magny">Order Now</a>
 </div>
 
@@ -222,7 +205,7 @@ footer {
 <div class="product">
 <img src="Rose Bloom.jpg">
 <p>Rose Bloom</p>
-<p>PKR 2999</p>
+<p>PKR 2500</p>
 <a class="order-btn" href="https://wa.me/03021240254?text=Hi%20I%20want%20to%20order%20Rose%20Bloom">Order Now</a>
 </div>
 
@@ -232,12 +215,8 @@ footer {
   <h3>Nécrose Fragrances</h3>
   <p>Contact: 03021240254</p>
   <p>Email: fahadejazaziz@gmail.com</p>
-
-  <p><strong>7 Days Refund Policy</strong><br>
-  If not satisfied, contact within 7 days.</p>
-
-  <p><strong>Privacy Policy</strong><br>
-  Your data is safe.</p>
+  <p><strong>7 Days Refund Policy</strong><br>If not satisfied, contact within 7 days.</p>
+  <p><strong>Privacy Policy</strong><br>Your data is safe.</p>
 </footer>
 
 <script>
