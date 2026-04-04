@@ -16,20 +16,19 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 20px;
-  border-bottom: 1px solid #eee;
+  padding: 15px 30px;
 }
 
+/* LOGO ENHANCED */
 header .logo img {
-  height: 120px;
-  max-width: 230px;
+  height: 110px;
 }
 
+/* NAV */
 header nav a {
   margin-left: 20px;
   text-decoration: none;
   color: #000;
-  font-weight: 500;
 }
 
 /* ANNOUNCEMENT */
@@ -37,29 +36,38 @@ header nav a {
   background: #0077cc;
   color: #fff;
   text-align: center;
-  padding: 10px;
-  font-weight: 500;
+  padding: 12px;
+  overflow: hidden;
 }
 
-/* ANIMATION TEXT */
 .announcement-text {
-  opacity: 0;
+  display: inline-block;
   transition: 0.5s;
 }
 
-.announcement-text.show {
-  opacity: 1;
-}
-
-/* BANNER FIXED */
+/* BANNER (BLACK GAP FIXED) */
 .banner {
   width: 100%;
-  height: 420px;
-  background: url('banner[1].png') center/contain no-repeat;
-  background-color: #000;
+  height: 320px;
+  background: url('banner[1].png') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* PRODUCTS */
+/* TEXT EFFECT */
+.banner h1 {
+  font-size: 38px;
+  color: #0077cc;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #0077cc; }
+  to { text-shadow: 0 0 20px #0077cc; }
+}
+
+/* PRODUCTS GRID */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -67,30 +75,35 @@ header nav a {
   padding: 40px;
 }
 
+/* CARD */
 .product-card {
   border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
-  transition: 0.4s;
   opacity: 0;
   transform: translateY(40px);
+  transition: 0.5s;
 }
 
-.product-card.visible {
+/* SHOW ANIMATION */
+.product-card.show {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* IMAGE */
 .product-card img {
   width: 100%;
-  height: 300px;
+  height: 320px;
   object-fit: cover;
 }
 
+/* HOVER */
 .product-card:hover {
   transform: translateY(-5px);
 }
 
+/* INFO */
 .product-info {
   text-align: center;
   padding: 15px;
@@ -113,12 +126,18 @@ header nav a {
 
 /* MOBILE */
 @media(max-width:768px){
-  .banner {
-    height: 250px;
+  header .logo img {
+    height: 85px;
   }
 
-  header .logo img {
-    height: 90px;
+  .banner {
+    height: 220px;
+  }
+
+  .banner h1 {
+    font-size: 26px;
+    text-align: center;
+    padding: 0 10px;
   }
 }
 </style>
@@ -130,6 +149,7 @@ header nav a {
   <div class="logo">
     <img src="new_logo[1].png">
   </div>
+
   <nav>
     <a href="#">Home</a>
     <a href="#">Perfumes</a>
@@ -138,92 +158,76 @@ header nav a {
   </nav>
 </header>
 
+<!-- ANNOUNCEMENT -->
 <div class="announcement">
-  <div class="announcement-text" id="announcementText">
-    You Can't Wear It, It Becomes You
-  </div>
+  <span class="announcement-text" id="announcement">
+    Free Shipping on All Orders
+  </span>
 </div>
 
-<div class="banner"></div>
+<!-- BANNER -->
+<div class="banner">
+  <h1>You Can't Wear It, It Becomes You</h1>
+</div>
 
+<!-- PRODUCTS -->
 <section class="products">
 
-<div class="product-card">
-<img src="BlackRose.jpg">
-<div class="product-info">
-<h3>Black Rose</h3>
-<p>Luxury fragrance</p>
-<span>2500 PKR</span><br>
-<a class="order-btn" href="#">Order Now</a>
-</div>
-</div>
+  <div class="product-card"><img src="BlackRose.jpg"><div class="product-info"><h3>Black Rose</h3><span>2500 PKR</span><a class="order-btn" href="https://wa.me/923021240254?text=Black Rose">Order Now</a></div></div>
 
-<div class="product-card">
-<img src="Intenseyou.jpg">
-<div class="product-info">
-<h3>Intense You</h3>
-<p>Deep fragrance</p>
-<span>2500 PKR</span><br>
-<a class="order-btn" href="#">Order Now</a>
-</div>
-</div>
+  <div class="product-card"><img src="Intenseyou.jpg"><div class="product-info"><h3>Intense You</h3><span>2500 PKR</span><a class="order-btn" href="https://wa.me/923021240254?text=Intense You">Order Now</a></div></div>
 
-<div class="product-card">
-<img src="Kaptan.jpg">
-<div class="product-info">
-<h3>Kaptan</h3>
-<p>Fresh scent</p>
-<span>2500 PKR</span><br>
-<a class="order-btn" href="#">Order Now</a>
-</div>
-</div>
+  <div class="product-card"><img src="Kaptan.jpg"><div class="product-info"><h3>Kaptan</h3><span>2500 PKR</span><a class="order-btn" href="https://wa.me/923021240254?text=Kaptan">Order Now</a></div></div>
 
-<div class="product-card">
-<img src="LazzyGirl.png">
-<div class="product-info">
-<h3>Lazzy Girl</h3>
-<p>Soft fragrance</p>
-<span>2500 PKR</span><br>
-<a class="order-btn" href="#">Order Now</a>
-</div>
-</div>
+  <div class="product-card"><img src="LazzyGirl.png"><div class="product-info"><h3>Lazzy Girl</h3><span>2500 PKR</span><a class="order-btn" href="https://wa.me/923021240254?text=Lazzy Girl">Order Now</a></div></div>
+
+  <div class="product-card"><img src="Lumine.jpg"><div class="product-info"><h3>Lumine</h3><span>2500 PKR</span><a class="order-btn" href="https://wa.me/923021240254?text=Lumine">Order Now</a></div></div>
+
+  <div class="product-card"><img src="Magny.jpg"><div class="product-info"><h3>Magny</h3><span>2500 PKR</span><a class="order-btn" href="https://wa.me/923021240254?text=Magny">Order Now</a></div></div>
+
+  <div class="product-card"><img src="Platinium.jpg"><div class="product-info"><h3>Platinium</h3><span>2500 PKR</span><a class="order-btn" href="https://wa.me/923021240254?text=Platinium">Order Now</a></div></div>
+
+  <div class="product-card"><img src="RoseBloom.jpg"><div class="product-info"><h3>Rose Bloom</h3><span>2500 PKR</span><a class="order-btn" href="https://wa.me/923021240254?text=Rose Bloom">Order Now</a></div></div>
 
 </section>
 
 <script>
-/* SCROLL ANIMATION */
-const cards = document.querySelectorAll('.product-card');
+/* PRODUCT ANIMATION FIX */
+const cards = document.querySelectorAll(".product-card");
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
-      entry.target.classList.add('visible');
+      entry.target.classList.add("show");
     }
   });
 });
 
-cards.forEach(card => observer.observe(card));
+cards.forEach(card => {
+  observer.observe(card);
+  card.classList.add("show"); // ensure all visible
+});
 
-/* ANNOUNCEMENT ROTATION */
+/* ANNOUNCEMENT ANIMATION */
 const texts = [
-  "You Can't Wear It, It Becomes You",
-  "Free Shipping Available",
-  "Limited Stock!"
+  "Free Shipping on All Orders",
+  "Limited Stock Available",
+  "Order Now & Get Special Gift"
 ];
 
 let i = 0;
-const el = document.getElementById("announcementText");
+const el = document.getElementById("announcement");
 
 setInterval(() => {
-  el.classList.remove("show");
-  setTimeout(()=>{
-    i = (i+1) % texts.length;
-    el.innerText = texts[i];
-    el.classList.add("show");
-  },300);
-},3000);
+  el.style.opacity = 0;
 
-el.classList.add("show");
+  setTimeout(() => {
+    i = (i + 1) % texts.length;
+    el.textContent = texts[i];
+    el.style.opacity = 1;
+  }, 500);
+
+}, 4000);
 </script>
 
 </body>
