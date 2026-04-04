@@ -25,11 +25,23 @@
     position: relative;
   }
 
+  header .logo img {
+    height: 80px; /* Desktop size */
+    max-width: 200px;
+  }
+
   header a {
     color: #000;
     text-decoration: none;
     margin-left: 20px;
     font-weight: 500;
+  }
+
+  @media(max-width:768px){
+    header .logo img {
+      height: 60px; /* Mobile size */
+      max-width: 150px;
+    }
   }
 
   /* Announcement bar above banner */
@@ -184,7 +196,7 @@
 
 <header>
   <div class="logo">
-    <img src="new_logo[1].png" alt="Necrose Fragrances" style="height:50px;">
+    <img src="new_logo[1].png" alt="Necrose Fragrances">
   </div>
   <nav>
     <a href="#">Home</a>
@@ -193,8 +205,18 @@
     <a href="#">Contact</a>
   </nav>
 </header>
+
+<!-- Only top announcement bar -->
+<div class="announcement">
+  <div class="announcement-text" id="announcementText">Free Shipping on All Necrose Fragrances!</div>
+</div>
+
+<div class="banner">
+  <h1>You Can't Wear It, It Becomes You</h1>
+</div>
+
 <section class="products">
-  <!-- Product cards (same as previous) -->
+  <!-- Product cards -->
   <div class="product-card">
     <img src="BlackRose.jpg" alt="Black Rose">
     <div class="product-info">
@@ -294,7 +316,7 @@
 
   // Announcement bar text change with smooth slide/fade
   const texts = [
-    "You Can't Wear It, It Becomes You",
+    "You Can't Wear It, It becomes You!",
     "Order Now & Get Special Gifts!",
     "Limited Stock Available!"
   ];
@@ -302,7 +324,6 @@
   let index = 0;
 
   function showNextAnnouncement() {
-    // Hide current
     announcement.classList.remove('show');
     announcement.classList.add('hide');
 
