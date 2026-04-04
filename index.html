@@ -9,7 +9,6 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #fff;
 }
 
 /* HEADER */
@@ -18,82 +17,52 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 8px 20px;
-  background: #fff;
   border-bottom: 1px solid #eee;
 }
 
-/* LOGO (UPDATED BIGGER) */
 header .logo img {
-  height: 130px;
-  width: auto;
-  max-width: 240px;
-  object-fit: contain;
+  height: 120px;
+  max-width: 230px;
 }
 
-/* NAV (IMPROVED) */
 header nav a {
-  color: #000;
-  text-decoration: none;
   margin-left: 20px;
-  font-size: 15px;
+  text-decoration: none;
+  color: #000;
   font-weight: 500;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  header {
-    padding: 8px 15px;
-  }
-
-  header .logo img {
-    height: 95px;
-    max-width: 200px;
-  }
-}
-
-/* ANNOUNCEMENT (IMPROVED) */
+/* ANNOUNCEMENT */
 .announcement {
-  width: 100%;
   background: #0077cc;
   color: #fff;
-  padding: 10px 0;
   text-align: center;
-  font-size: 14px;
-  letter-spacing: 0.5px;
+  padding: 10px;
   font-weight: 500;
-  margin: 0;
 }
 
-/* animation */
+/* ANIMATION TEXT */
 .announcement-text {
-  display: inline-block;
-  white-space: nowrap;
   opacity: 0;
-  transition: opacity 0.8s, transform 0.8s;
+  transition: 0.5s;
 }
 
 .announcement-text.show {
   opacity: 1;
-  transform: translateX(0);
 }
 
-.announcement-text.hide {
-  opacity: 0;
-  transform: translateX(40px);
-}
-
-/* BANNER (FIXED - NO BLACK GAP) */
+/* BANNER FIXED */
 .banner {
   width: 100%;
-  height: 300px;
-  background: url('banner[1].png') center/cover no-repeat;
-  margin: 0;
+  height: 420px;
+  background: url('banner[1].png') center/contain no-repeat;
+  background-color: #000;
 }
 
 /* PRODUCTS */
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 25px;
   padding: 40px;
 }
@@ -103,7 +72,6 @@ header nav a {
   border-radius: 10px;
   overflow: hidden;
   transition: 0.4s;
-  background: #fff;
   opacity: 0;
   transform: translateY(40px);
 }
@@ -115,27 +83,17 @@ header nav a {
 
 .product-card img {
   width: 100%;
-  height: 320px;
+  height: 300px;
   object-fit: cover;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .product-info {
-  padding: 15px;
   text-align: center;
-}
-
-.product-info h3 {
-  margin: 10px 0;
-}
-
-.product-info p {
-  font-size: 14px;
-  color: #555;
+  padding: 15px;
 }
 
 .product-info span {
@@ -146,29 +104,21 @@ header nav a {
 .order-btn {
   display: inline-block;
   margin-top: 10px;
-  padding: 8px 18px;
+  padding: 8px 15px;
   background: #0077cc;
   color: #fff;
-  border-radius: 5px;
   text-decoration: none;
+  border-radius: 5px;
 }
 
-.order-btn:hover {
-  background: #005fa3;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  border-top: 1px solid #ddd;
-  font-size: 14px;
-}
-
-/* MOBILE BANNER */
+/* MOBILE */
 @media(max-width:768px){
   .banner {
-    height: 200px;
+    height: 250px;
+  }
+
+  header .logo img {
+    height: 90px;
   }
 }
 </style>
@@ -188,66 +138,60 @@ footer {
   </nav>
 </header>
 
-<!-- ANNOUNCEMENT -->
 <div class="announcement">
   <div class="announcement-text" id="announcementText">
     You Can't Wear It, It Becomes You
   </div>
 </div>
 
-<!-- BANNER -->
 <div class="banner"></div>
 
 <section class="products">
 
-  <div class="product-card">
-    <img src="BlackRose.jpg">
-    <div class="product-info">
-      <h3>Black Rose</h3>
-      <p>Luxury fragrance for bold personalities</p>
-      <span>2500 PKR</span>
-      <a class="order-btn" href="https://wa.me/923021240254?text=I'm%20interested%20in%20Black Rose">Order Now</a>
-    </div>
-  </div>
+<div class="product-card">
+<img src="BlackRose.jpg">
+<div class="product-info">
+<h3>Black Rose</h3>
+<p>Luxury fragrance</p>
+<span>2500 PKR</span><br>
+<a class="order-btn" href="#">Order Now</a>
+</div>
+</div>
 
-  <div class="product-card">
-    <img src="Intenseyou.jpg">
-    <div class="product-info">
-      <h3>Intense You</h3>
-      <p>Deep, intense, captivating scent</p>
-      <span>2500 PKR</span>
-      <a class="order-btn" href="https://wa.me/923021240254?text=I'm%20interested%20in%20Intense You">Order Now</a>
-    </div>
-  </div>
+<div class="product-card">
+<img src="Intenseyou.jpg">
+<div class="product-info">
+<h3>Intense You</h3>
+<p>Deep fragrance</p>
+<span>2500 PKR</span><br>
+<a class="order-btn" href="#">Order Now</a>
+</div>
+</div>
 
-  <div class="product-card">
-    <img src="Kaptan.jpg">
-    <div class="product-info">
-      <h3>Kaptan</h3>
-      <p>Fresh, invigorating aroma</p>
-      <span>2500 PKR</span>
-      <a class="order-btn" href="https://wa.me/923021240254?text=I'm%20interested%20in%20Kaptan">Order Now</a>
-    </div>
-  </div>
+<div class="product-card">
+<img src="Kaptan.jpg">
+<div class="product-info">
+<h3>Kaptan</h3>
+<p>Fresh scent</p>
+<span>2500 PKR</span><br>
+<a class="order-btn" href="#">Order Now</a>
+</div>
+</div>
 
-  <div class="product-card">
-    <img src="LazzyGirl.png">
-    <div class="product-info">
-      <h3>Lazzy Girl</h3>
-      <p>Soft, sweet fragrance</p>
-      <span>2500 PKR</span>
-      <a class="order-btn" href="https://wa.me/923021240254?text=I'm%20interested%20in%20Lazzy Girl">Order Now</a>
-    </div>
-  </div>
+<div class="product-card">
+<img src="LazzyGirl.png">
+<div class="product-info">
+<h3>Lazzy Girl</h3>
+<p>Soft fragrance</p>
+<span>2500 PKR</span><br>
+<a class="order-btn" href="#">Order Now</a>
+</div>
+</div>
 
 </section>
 
-<footer>
-  &copy; 2026 Necrose Fragrances
-</footer>
-
 <script>
-/* PRODUCT ANIMATION */
+/* SCROLL ANIMATION */
 const cards = document.querySelectorAll('.product-card');
 
 const observer = new IntersectionObserver(entries => {
@@ -263,28 +207,23 @@ cards.forEach(card => observer.observe(card));
 /* ANNOUNCEMENT ROTATION */
 const texts = [
   "You Can't Wear It, It Becomes You",
-  "Buy Any 3 Fragrances and Get 25% Off",
-  "Grabs Your Now...,
-  "Limited Stock Available!"
+  "Free Shipping Available",
+  "Limited Stock!"
 ];
 
-const announcement = document.getElementById('announcementText');
-let index = 0;
+let i = 0;
+const el = document.getElementById("announcementText");
 
-function showNextAnnouncement() {
-  announcement.classList.remove('show');
-  announcement.classList.add('hide');
+setInterval(() => {
+  el.classList.remove("show");
+  setTimeout(()=>{
+    i = (i+1) % texts.length;
+    el.innerText = texts[i];
+    el.classList.add("show");
+  },300);
+},3000);
 
-  setTimeout(() => {
-    index = (index + 1) % texts.length;
-    announcement.textContent = texts[index];
-    announcement.classList.remove('hide');
-    announcement.classList.add('show');
-  }, 500);
-}
-
-announcement.classList.add('show');
-setInterval(showNextAnnouncement, 4000);
+el.classList.add("show");
 </script>
 
 </body>
