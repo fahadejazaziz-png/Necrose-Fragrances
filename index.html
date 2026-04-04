@@ -9,49 +9,64 @@
     margin: 0;
     font-family: 'Arial', sans-serif;
     background: #fff;
-    color: #0A0A0A;
+    color: #000;
   }
 
+  /* Header */
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background: #0A0A0A;
-    color: #FFD700;
+    background: #fff;
+    color: #000;
     font-weight: bold;
   }
 
   header a {
-    color: #FFD700;
+    color: #000;
     text-decoration: none;
     margin-left: 20px;
+    font-weight: 500;
   }
 
+  /* Announcement */
+  .announcement {
+    width: 100%;
+    text-align: center;
+    background: #0077cc;
+    color: #fff;
+    padding: 10px 0;
+    font-weight: bold;
+  }
+
+  /* Banner */
   .banner {
     width: 100%;
     height: 500px;
-    background: url('banner.png') center/cover no-repeat;
+    background: url('banner[1].png') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
 
   .banner h1 {
     font-size: 50px;
-    color: #B8860B;
-    background: rgba(0,0,0,0.3);
+    color: #0077cc;
+    background: rgba(255,255,255,0.2);
     padding: 20px 40px;
     text-transform: uppercase;
     animation: shine 3s linear infinite;
   }
 
   @keyframes shine {
-    0% { text-shadow: 0 0 5px #FFD700,0 0 10px #FFD700;}
-    50% { text-shadow: 0 0 20px #FFD700,0 0 40px #FFD700;}
-    100% { text-shadow: 0 0 5px #FFD700,0 0 10px #FFD700;}
+    0% { text-shadow: 0 0 5px #0077cc,0 0 10px #0077cc;}
+    50% { text-shadow: 0 0 20px #0077cc,0 0 40px #0077cc;}
+    100% { text-shadow: 0 0 5px #0077cc,0 0 10px #0077cc;}
   }
 
+  /* Product Grid */
   .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -63,8 +78,15 @@
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.5s, box-shadow 0.5s, opacity 0.5s;
     background: #fff;
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  .product-card.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .product-card img {
@@ -103,13 +125,13 @@
     display: block;
     margin: 10px 0;
     font-weight: bold;
-    color: #B8860B;
+    color: #0077cc;
   }
 
   .order-btn {
     display: inline-block;
     padding: 10px 20px;
-    background: #B8860B;
+    background: #0077cc;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -117,16 +139,17 @@
   }
 
   .order-btn:hover {
-    background: #FFD700;
-    color: #0A0A0A;
+    background: #005fa3;
   }
 
+  /* Footer */
   footer {
-    background: #0A0A0A;
-    color: #FFD700;
+    background: #fff;
+    color: #000;
     text-align: center;
     padding: 40px 20px;
     font-size: 14px;
+    border-top: 1px solid #ddd;
   }
 </style>
 </head>
@@ -144,6 +167,10 @@
   </nav>
 </header>
 
+<div class="announcement">
+  Limited Time Offer: Free Delivery on All Orders!
+</div>
+
 <div class="banner">
   <h1>You Can't Wear It, It Becomes You</h1>
 </div>
@@ -155,7 +182,7 @@
       <h3>Black Rose</h3>
       <p>Luxury fragrance for bold personalities</p>
       <span>2500 PKR</span>
-      <a class="order-btn" href="https://wa.me/923021240254?text=I'm%20interested%20in%20Black%20Rose">Order Now</a>
+      <a class="order-btn" href="https://wa.me/923021240254?text=I'm%20interested%20in%20Black Rose">Order Now</a>
     </div>
   </div>
 
@@ -233,6 +260,20 @@
 <footer>
   &copy; 2026 Necrose Fragrances. All rights reserved.
 </footer>
+
+<script>
+  // Scroll animation for product cards
+  const cards = document.querySelectorAll('.product-card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  cards.forEach(card => observer.observe(card));
+</script>
 
 </body>
 </html>
