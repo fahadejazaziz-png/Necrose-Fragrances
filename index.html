@@ -8,98 +8,102 @@
 <style>
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   background: #fff;
-  color: #000;
 }
 
-/* Header */
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 8px 20px; /* tight spacing */
   background: #fff;
   border-bottom: 1px solid #eee;
 }
 
-/* Logo FIX */
+/* LOGO (perfect balance) */
 header .logo img {
-  height: 200px;
+  height: 110px;
   width: auto;
-  max-width: 280px;
+  max-width: 220px;
   object-fit: contain;
 }
 
-header a {
+/* NAV */
+header nav a {
   color: #000;
   text-decoration: none;
-  margin-left: 20px;
-  font-weight: 500;
+  margin-left: 15px;
+  font-size: 14px;
 }
 
-/* Mobile */
+/* MOBILE */
 @media(max-width:768px){
   header {
-    padding: 15px 20px;
+    padding: 8px 15px;
   }
 
   header .logo img {
-    height: 55px;
-    max-width: 140px;
+    height: 85px;
+    max-width: 180px;
   }
 }
 
-/* Announcement */
+/* ANNOUNCEMENT */
 .announcement {
   width: 100%;
   background: #0077cc;
   color: #fff;
-  padding: 12px 0;
-  font-weight: bold;
+  padding: 10px 0;
   text-align: center;
+  font-size: 14px;
   margin: 0;
 }
 
+/* animation */
 .announcement-text {
   display: inline-block;
   white-space: nowrap;
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 0.8s, transform 0.8s;
 }
 
 .announcement-text.show {
   opacity: 1;
+  transform: translateX(0);
 }
 
 .announcement-text.hide {
   opacity: 0;
+  transform: translateX(40px);
 }
 
-/* Banner WITHOUT TEXT */
+/* BANNER */
 .banner {
   width: 100%;
   height: 300px;
-  background: url('banner[1].png') center/cover no-repeat;
+  background: url('banner[1].png') center/contain no-repeat;
+  background-color: #000; /* gap hide */
   margin: 0;
 }
 
-/* Products */
+/* PRODUCTS */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 50px;
+  gap: 25px;
+  padding: 40px;
 }
 
 .product-card {
   border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.5s, box-shadow 0.5s, opacity 0.5s;
+  transition: 0.4s;
   background: #fff;
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(40px);
 }
 
 .product-card.visible {
@@ -109,67 +113,61 @@ header a {
 
 .product-card img {
   width: 100%;
-  height: 350px;
+  height: 320px;
   object-fit: cover;
 }
 
-.product-card:hover img {
-  transform: scale(1.05);
-}
-
 .product-card:hover {
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
   transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .product-info {
-  padding: 20px;
+  padding: 15px;
   text-align: center;
 }
 
 .product-info h3 {
-  font-size: 20px;
   margin: 10px 0;
 }
 
 .product-info p {
+  font-size: 14px;
   color: #555;
-  font-size: 16px;
-  margin: 0;
 }
 
 .product-info span {
-  display: block;
-  margin: 10px 0;
-  font-weight: bold;
   color: #0077cc;
+  font-weight: bold;
 }
 
 .order-btn {
   display: inline-block;
-  padding: 10px 20px;
+  margin-top: 10px;
+  padding: 8px 18px;
   background: #0077cc;
   color: #fff;
-  text-decoration: none;
   border-radius: 5px;
+  text-decoration: none;
 }
 
 .order-btn:hover {
   background: #005fa3;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
-  background: #fff;
-  color: #000;
   text-align: center;
-  padding: 40px 20px;
-  font-size: 14px;
+  padding: 30px;
   border-top: 1px solid #ddd;
+  font-size: 14px;
 }
 
+/* MOBILE BANNER */
 @media(max-width:768px){
-  .banner { height: 200px; }
+  .banner {
+    height: 200px;
+  }
 }
 </style>
 </head>
@@ -178,7 +176,7 @@ footer {
 
 <header>
   <div class="logo">
-    <img src="new_logo[1].png" alt="Necrose Fragrances">
+    <img src="new_logo[1].png">
   </div>
   <nav>
     <a href="#">Home</a>
@@ -188,13 +186,14 @@ footer {
   </nav>
 </header>
 
+<!-- ANNOUNCEMENT -->
 <div class="announcement">
   <div class="announcement-text" id="announcementText">
-    Free Shipping on All Necrose Fragrances!
+    Free Shipping on All Orders!
   </div>
 </div>
 
-<!-- Banner WITHOUT ANY TEXT -->
+<!-- BANNER -->
 <div class="banner"></div>
 
 <section class="products">
@@ -233,59 +232,20 @@ footer {
     <img src="LazzyGirl.png">
     <div class="product-info">
       <h3>Lazzy Girl</h3>
-      <p>Soft, sweet, casual fragrance</p>
+      <p>Soft, sweet fragrance</p>
       <span>2500 PKR</span>
       <a class="order-btn" href="https://wa.me/923021240254?text=I'm%20interested%20in%20Lazzy Girl">Order Now</a>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <img src="Lumine.jpg">
-    <div class="product-info">
-      <h3>Lumine</h3>
-      <p>Bright, sparkling scent</p>
-      <span>2500 PKR</span>
-      <a class="order-btn" href="https://wa.me/923021240254?text=I'm%20interested%20in%20Lumine">Order Now</a>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <img src="Magny.jpg">
-    <div class="product-info">
-      <h3>Magny</h3>
-      <p>Bold, mysterious aroma</p>
-      <span>2500 PKR</span>
-      <a class="order-btn" href="https://wa.me/923021240254?text=I'm%20interested%20in%20Magny">Order Now</a>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <img src="Platinium.jpg">
-    <div class="product-info">
-      <h3>Platinium</h3>
-      <p>Elegant, refined fragrance</p>
-      <span>2500 PKR</span>
-      <a class="order-btn" href="https://wa.me/923021240254?text=I'm%20interested%20in%20Platinium">Order Now</a>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <img src="Rose Bloom.jpg">
-    <div class="product-info">
-      <h3>Rose Bloom</h3>
-      <p>Romantic, classic floral scent</p>
-      <span>2500 PKR</span>
-      <a class="order-btn" href="https://wa.me/923021240254?text=I'm%20interested%20in%20Rose Bloom">Order Now</a>
     </div>
   </div>
 
 </section>
 
 <footer>
-  &copy; 2026 Necrose Fragrances. All rights reserved.
+  &copy; 2026 Necrose Fragrances
 </footer>
 
 <script>
+/* PRODUCT ANIMATION */
 const cards = document.querySelectorAll('.product-card');
 
 const observer = new IntersectionObserver(entries => {
@@ -294,10 +254,11 @@ const observer = new IntersectionObserver(entries => {
       entry.target.classList.add('visible');
     }
   });
-}, { threshold: 0.1 });
+});
 
 cards.forEach(card => observer.observe(card));
 
+/* ANNOUNCEMENT ROTATION */
 const texts = [
   "You Can't Wear It, It Becomes You",
   "Grab Your Now",
@@ -316,11 +277,11 @@ function showNextAnnouncement() {
     announcement.textContent = texts[index];
     announcement.classList.remove('hide');
     announcement.classList.add('show');
-  }, 1000);
+  }, 500);
 }
 
 announcement.classList.add('show');
-setInterval(showNextAnnouncement, 5000);
+setInterval(showNextAnnouncement, 4000);
 </script>
 
 </body>
