@@ -21,6 +21,8 @@
     background: #fff;
     color: #000;
     font-weight: bold;
+    z-index: 10;
+    position: relative;
   }
 
   header a {
@@ -30,21 +32,41 @@
     font-weight: 500;
   }
 
-  /* Announcement */
+  /* Announcement bar above banner */
   .announcement {
     width: 100%;
-    text-align: center;
     background: #0077cc;
     color: #fff;
-    padding: 10px 0;
+    padding: 12px 0;
     font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .announcement-text {
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
+  }
+
+  .announcement-text.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .announcement-text.hide {
+    opacity: 0;
+    transform: translateX(100%);
   }
 
   /* Banner */
   .banner {
     width: 100%;
-    height: 500px;
-    background: url('banner[1].png') center/cover no-repeat;
+    height: 300px; /* slim height */
+    background: url('banner[1].png') center/contain no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,12 +74,12 @@
   }
 
   .banner h1 {
-    font-size: 50px;
+    font-size: 40px;
     color: #0077cc;
-    background: rgba(255,255,255,0.2);
-    padding: 20px 40px;
+    padding: 10px 30px;
     text-transform: uppercase;
     animation: shine 3s linear infinite;
+    background: rgba(255,255,255,0.1);
   }
 
   @keyframes shine {
@@ -151,6 +173,11 @@
     font-size: 14px;
     border-top: 1px solid #ddd;
   }
+
+  @media(max-width:768px){
+    .banner { height: 200px; }
+    .banner h1 { font-size: 30px; }
+  }
 </style>
 </head>
 <body>
@@ -167,8 +194,9 @@
   </nav>
 </header>
 
+<!-- Announcement above banner -->
 <div class="announcement">
-  Limited Time Offer: Free Delivery on All Orders!
+  <div class="announcement-text" id="announcementText">Free Shipping on All Necrose Fragrances!</div>
 </div>
 
 <div class="banner">
@@ -176,6 +204,7 @@
 </div>
 
 <section class="products">
+  <!-- Product cards (same as previous) -->
   <div class="product-card">
     <img src="BlackRose.jpg" alt="Black Rose">
     <div class="product-info">
@@ -262,7 +291,7 @@
 </footer>
 
 <script>
-  // Scroll animation for product cards
+  // Product cards scroll animation
   const cards = document.querySelectorAll('.product-card');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -271,8 +300,32 @@
       }
     });
   }, { threshold: 0.1 });
-
   cards.forEach(card => observer.observe(card));
+
+  // Announcement bar text change with smooth slide/fade
+  const texts = [
+    "Free Shipping on All Necrose Fragrances!",
+    "Order Now & Get Special Gifts!",
+    "Limited Stock Available!"
+  ];
+  const announcement = document.getElementById('announcementText');
+  let index = 0;
+
+  function showNextAnnouncement() {
+    // Hide current
+    announcement.classList.remove('show');
+    announcement.classList.add('hide');
+
+    setTimeout(() => {
+      index = (index + 1) % texts.length;
+      announcement.textContent = texts[index];
+      announcement.classList.remove('hide');
+      announcement.classList.add('show');
+    }, 1000);
+  }
+
+  announcement.classList.add('show');
+  setInterval(showNextAnnouncement, 5000);
 </script>
 
 </body>
