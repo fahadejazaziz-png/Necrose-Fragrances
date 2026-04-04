@@ -23,7 +23,7 @@ header {
 }
 
 .logo img {
-  height: 150px;
+  height: 180px;
 }
 
 /* NAV */
@@ -162,10 +162,22 @@ footer p {
   color: #aaa;
 }
 
+/* SCROLL ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* MOBILE */
 @media(max-width:768px){
   .logo img {
-    height: 110px;
+    height: 120px;
   }
 }
 </style>
@@ -197,7 +209,7 @@ footer p {
   <img src="banner[1].png">
 </div>
 
-<section class="products">
+<section class="products fade-in">
 
 <div class="product-card">
 <img src="BlackRose.jpg">
@@ -283,6 +295,20 @@ footer p {
 </footer>
 
 <a class="whatsapp" href="https://wa.me/923021240254">WhatsApp</a>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll('.fade-in').forEach(el => {
+  observer.observe(el);
+});
+</script>
 
 </body>
 </html>
