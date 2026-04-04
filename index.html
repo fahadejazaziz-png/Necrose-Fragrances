@@ -3,209 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nécrose Fragrances</title>
+<title>Nécrose Fragrances VIP</title>
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0A0A0A;
-    color: #FFD700;
-  }
-
-  header {
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-  }
-
-  #logo {
-    width: 200px;
-    height: auto;
-  }
-
-  #announcement {
-    font-family: 'Chancery', cursive;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 5px 0;
-    margin-top: 5px;
-    display: inline-block;
-    overflow: hidden;
-  }
-
-  .shine {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .shine::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255,215,0,0.6), transparent);
-    animation: shineMove 3s infinite;
-  }
-
-  @keyframes shineMove {
-    0% { left: -75%; }
-    100% { left: 125%; }
-  }
-
-  #banner {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    display: block;
-    margin: 10px auto;
-  }
-
-  .products {
-    display: grid;
-    gap: 15px;
-    padding: 10px;
-  }
-
-  @media(min-width:1024px){
-    .products { grid-template-columns: repeat(4,1fr);}
-  }
-
-  @media(max-width:1023px){
-    .products { grid-template-columns: repeat(3,1fr);}
-  }
-
-  .product-card {
-    background:#0A0A0A;
-    border:1px solid #FFD700;
-    padding:10px;
-    text-align:center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    overflow:hidden;
-  }
-
-  .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow:0 0 15px #FFD700;
-  }
-
-  .product-card img {
-    width:100%;
-    height:auto;
-    object-fit: contain;
-    display:block;
-  }
-
-  .product-card h3 {
-    margin:5px 0;
-    font-size:16px;
-    color:#B8860B;
-  }
-
-  .product-card p {
-    margin:0 0 5px;
-    font-size:14px;
-    color:#FFD700;
-  }
-
-  .order-btn {
-    background:#FFD700;
-    color:#0A0A0A;
-    padding:8px 12px;
-    border:none;
-    cursor:pointer;
-    font-weight:bold;
-    transition: background 0.3s, transform 0.3s;
-  }
-
-  .order-btn:hover {
-    background:#B8860B;
-    transform: scale(1.05);
-  }
-
-  footer {
-    background:#111;
-    color:#FFD700;
-    padding:15px;
-    text-align:center;
-    font-size:14px;
-  }
-
-  footer a {
-    color:#FFD700;
-    text-decoration:none;
-    margin:0 5px;
-  }
-
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: #0A0A0A;
+  color: #FFD700;
+}
+header {
+  text-align:center;
+  padding:10px 0;
+}
+#logo {
+  width:220px;
+  height:auto;
+  display:block;
+  margin:0 auto;
+}
+#announcement {
+  font-family:'Chancery', cursive;
+  font-size:16px;
+  font-weight:bold;
+  margin-top:5px;
+  background: linear-gradient(90deg, #FFD700, #B8860B, #FFD700);
+  background-size:200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+#banner {
+  width:100%;
+  max-height:300px;
+  object-fit:contain;
+  display:block;
+  margin:10px auto;
+}
+.products {
+  display:grid;
+  gap:15px;
+  padding:10px;
+}
+@media(min-width:1024px){
+  .products {grid-template-columns:repeat(4,1fr);}
+}
+@media(max-width:1023px){
+  .products {grid-template-columns:repeat(3,1fr);}
+}
+.product-card {
+  background:#0A0A0A;
+  border:1px solid #FFD700;
+  padding:10px;
+  text-align:center;
+  overflow:hidden;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px #FFD700, 0 0 40px #B8860B inset;
+}
+.product-card img {
+  width:100%;
+  height:250px;
+  object-fit:contain;
+  display:block;
+}
+.product-card h3 {
+  margin:5px 0;
+  font-size:16px;
+  color:#FFD700;
+  background: linear-gradient(90deg, #FFD700, #B8860B, #FFD700);
+  background-size:200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+  font-weight:bold;
+}
+.order-btn {
+  background:#FFD700;
+  color:#0A0A0A;
+  padding:8px 12px;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+  margin-top:5px;
+  transition: transform 0.4s, background 0.4s;
+}
+.order-btn:hover {
+  transform: scale(1.08);
+  background:#B8860B;
+}
+footer {
+  background:#111;
+  color:#FFD700;
+  padding:15px;
+  text-align:center;
+  font-size:14px;
+}
+footer a {color:#FFD700; text-decoration:none; margin:0 5px;}
+@keyframes shine {
+  0% {background-position: 200% 0;}
+  100% {background-position: -200% 0;}
+}
 </style>
 </head>
 <body>
 
 <header>
-  <img id="logo" src="logo.png" alt="Nécrose Logo" class="shine">
-  <div id="announcement" class="shine">SALE LIVE - YOU CAN'T WEAR IT, IT BECOMES YOU</div>
+  <img id="logo" src="logo.png" alt="Nécrose Logo">
+  <div id="announcement">SALE LIVE - YOU CAN'T WEAR IT, IT BECOMES YOU</div>
 </header>
 
-<img id="banner" src="banner.png" class="shine" alt="Banner">
+<img id="banner" src="banner.png" alt="Banner">
 
 <section class="products">
   <div class="product-card">
     <img src="BlackRose.jpg" alt="BlackRose">
     <h3>BlackRose</h3>
     <p>PKR 2500</p>
-    <button class="order-btn">Order Now</button>
+    <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
   </div>
   <div class="product-card">
     <img src="Intenseyou.jpg" alt="Intense You">
     <h3>Intense You</h3>
     <p>PKR 2500</p>
-    <button class="order-btn">Order Now</button>
+    <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
   </div>
   <div class="product-card">
     <img src="Kaptan.jpg" alt="Kaptan">
     <h3>Kaptan</h3>
     <p>PKR 2500</p>
-    <button class="order-btn">Order Now</button>
+    <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
   </div>
   <div class="product-card">
     <img src="LazzyGirl.png" alt="Lazzy Girl">
     <h3>Lazzy Girl</h3>
     <p>PKR 2500</p>
-    <button class="order-btn">Order Now</button>
+    <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
   </div>
   <div class="product-card">
     <img src="Lumine.jpg" alt="Lumine">
     <h3>Lumine</h3>
     <p>PKR 2500</p>
-    <button class="order-btn">Order Now</button>
+    <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
   </div>
   <div class="product-card">
     <img src="Magny.jpg" alt="Magny">
     <h3>Magny</h3>
     <p>PKR 3500</p>
-    <button class="order-btn">Order Now</button>
+    <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
   </div>
   <div class="product-card">
     <img src="Platinium.jpg" alt="Platinium">
     <h3>Platinium</h3>
     <p>PKR 2500</p>
-    <button class="order-btn">Order Now</button>
+    <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
   </div>
   <div class="product-card">
-    <img src="RoseBloom.jpg" alt="Rose Bloom">
+    <img src="Rose Bloom.jpg" alt="Rose Bloom">
     <h3>Rose Bloom</h3>
     <p>PKR 2999</p>
-    <button class="order-btn">Order Now</button>
+    <button class="order-btn" onclick="window.open('https://wa.me/03021240254')">Order Now</button>
   </div>
 </section>
 
 <footer>
-  Contact: <a href="mailto:fahadejazaziz@gmail.com">fahadejazaziz@gmail.com</a> |
-  WhatsApp: <a href="https://wa.me/03021240254">03021240254</a> |
-  <a href="#">Refund Policy (7 Days)</a> |
-  <a href="#">Privacy Policy</a>
+Contact: <a href="mailto:fahadejazaziz@gmail.com">fahadejazaziz@gmail.com</a> |
+WhatsApp: <a href="https://wa.me/03021240254">03021240254</a> |
+<a href="#">Refund Policy (7 Days)</a> |
+<a href="#">Privacy Policy</a>
 </footer>
+
+<script>
+// Announcement flashing every 5 seconds
+const announcements = [
+  "SALE LIVE - YOU CAN'T WEAR IT, IT BECOMES YOU",
+  "GRAB YOURS NOW"
+];
+let idx = 0;
+const annDiv = document.getElementById("announcement");
+setInterval(() => {
+  idx = (idx + 1) % announcements.length;
+  annDiv.textContent = announcements[idx];
+}, 5000);
+</script>
 
 </body>
 </html>
