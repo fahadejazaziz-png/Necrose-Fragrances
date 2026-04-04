@@ -4,246 +4,208 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nécrose Fragrances</title>
-
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #000;
-  color: #FFD700;
-}
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0A0A0A;
+    color: #FFD700;
+  }
 
-/* HEADER */
-header {
-  position: relative;
-  text-align: center;
-  padding: 10px 0;
-}
+  header {
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+  }
 
-#logo {
-  width: 180px;
-}
+  #logo {
+    width: 200px;
+    height: auto;
+  }
 
-/* ANNOUNCEMENT */
-#announcement {
-  font-size: 22px;
-  margin: 5px 0;
-  color: #FFD700;
-  letter-spacing: 2px;
-  transition: opacity 0.8s;
-  text-shadow: 0 0 5px #FFD700, 0 0 10px #B8860B, 0 0 20px #FFD700;
-}
+  #announcement {
+    font-family: 'Chancery', cursive;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 0;
+    margin-top: 5px;
+    display: inline-block;
+    overflow: hidden;
+  }
 
-/* BANNER FIX */
-#banner {
-  width: 100%;
-  height: auto;        /* no crop */
-  display: block;
-}
+  .shine {
+    position: relative;
+    overflow: hidden;
+  }
 
-/* MENU */
-#menu-btn {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 28px;
-  cursor: pointer;
-}
-#menu {
-  display: none;
-  position: absolute;
-  top: 40px;
-  left: 10px;
-  background: #111;
-  border: 1px solid #B8860B;
-  padding: 10px;
-}
-#menu a {
-  display: block;
-  color: #FFD700;
-  text-decoration: none;
-  margin: 5px 0;
-}
+  .shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,215,0,0.6), transparent);
+    animation: shineMove 3s infinite;
+  }
 
-/* PRODUCTS */
-.products {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  padding: 15px;
-}
+  @keyframes shineMove {
+    0% { left: -75%; }
+    100% { left: 125%; }
+  }
 
-.product {
-  background: #111;
-  padding: 10px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+  #banner {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    display: block;
+    margin: 10px auto;
+  }
 
-.product:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 0 15px #FFD700;
-}
+  .products {
+    display: grid;
+    gap: 15px;
+    padding: 10px;
+  }
 
-/* IMAGE FIX NO CROP */
-.product img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain;   /* full image show */
-  background: #000;      /* black fill for empty space */
-}
+  @media(min-width:1024px){
+    .products { grid-template-columns: repeat(4,1fr);}
+  }
 
-/* NAME BRONZE */
-.product p:first-of-type {
-  color: #B8860B;
-  font-weight: bold;
-}
+  @media(max-width:1023px){
+    .products { grid-template-columns: repeat(3,1fr);}
+  }
 
-/* BUTTON */
-.order-btn {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 6px 10px;
-  background: linear-gradient(45deg, #FFD700, #B8860B);
-  color: #000;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-}
+  .product-card {
+    background:#0A0A0A;
+    border:1px solid #FFD700;
+    padding:10px;
+    text-align:center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow:hidden;
+  }
 
-.order-btn:hover {
-  box-shadow: 0 0 10px #FFD700;
-}
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow:0 0 15px #FFD700;
+  }
 
-/* FOOTER */
-footer {
-  background: #0A0A0A;
-  color: #FFD700;
-  padding: 20px;
-  text-align: center;
-  margin-top: 20px;
-}
+  .product-card img {
+    width:100%;
+    height:auto;
+    object-fit: contain;
+    display:block;
+  }
 
-/* RESPONSIVE */
-@media(max-width: 900px){
-  .products { grid-template-columns: repeat(3,1fr); }
-}
-@media(max-width: 500px){
-  .products { grid-template-columns: repeat(2,1fr); }
-}
+  .product-card h3 {
+    margin:5px 0;
+    font-size:16px;
+    color:#B8860B;
+  }
+
+  .product-card p {
+    margin:0 0 5px;
+    font-size:14px;
+    color:#FFD700;
+  }
+
+  .order-btn {
+    background:#FFD700;
+    color:#0A0A0A;
+    padding:8px 12px;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .order-btn:hover {
+    background:#B8860B;
+    transform: scale(1.05);
+  }
+
+  footer {
+    background:#111;
+    color:#FFD700;
+    padding:15px;
+    text-align:center;
+    font-size:14px;
+  }
+
+  footer a {
+    color:#FFD700;
+    text-decoration:none;
+    margin:0 5px;
+  }
+
 </style>
 </head>
-
 <body>
 
 <header>
-  <div id="menu-btn">⋮</div>
-  <div id="menu">
-    <a href="#">Home</a>
-    <a href="#">Perfume</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </div>
-
-  <img id="logo" src="logo.png">
-  <div id="announcement"></div>
+  <img id="logo" src="logo.png" alt="Nécrose Logo" class="shine">
+  <div id="announcement" class="shine">SALE LIVE - YOU CAN'T WEAR IT, IT BECOMES YOU</div>
 </header>
 
-<img id="banner" src="banner.png">
+<img id="banner" src="banner.png" class="shine" alt="Banner">
 
-<div class="products">
-
-<div class="product">
-<img src="BlackRose.jpg">
-<p>BlackRose</p>
-<p>PKR 2500</p>
-<a class="order-btn" href="https://wa.me/03021240254?text=Hi%20I%20want%20to%20order%20BlackRose">Order Now</a>
-</div>
-
-<div class="product">
-<img src="Intenseyou.jpg">
-<p>Intense You</p>
-<p>PKR 2500</p>
-<a class="order-btn" href="https://wa.me/03021240254?text=Hi%20I%20want%20to%20order%20Intense%20You">Order Now</a>
-</div>
-
-<div class="product">
-<img src="Kaptan.jpg">
-<p>Kaptan</p>
-<p>PKR 2500</p>
-<a class="order-btn" href="https://wa.me/03021240254?text=Hi%20I%20want%20to%20order%20Kaptan">Order Now</a>
-</div>
-
-<div class="product">
-<img src="LazzyGirl.png">
-<p>Lazzy Girl</p>
-<p>PKR 2500</p>
-<a class="order-btn" href="https://wa.me/03021240254?text=Hi%20I%20want%20to%20order%20Lazzy%20Girl">Order Now</a>
-</div>
-
-<div class="product">
-<img src="Lumine.jpg">
-<p>Lumine</p>
-<p>PKR 2500</p>
-<a class="order-btn" href="https://wa.me/03021240254?text=Hi%20I%20want%20to%20order%20Lumine">Order Now</a>
-</div>
-
-<div class="product">
-<img src="Magny.jpg">
-<p>Magny</p>
-<p>PKR 2500</p>
-<a class="order-btn" href="https://wa.me/03021240254?text=Hi%20I%20want%20to%20order%20Magny">Order Now</a>
-</div>
-
-<div class="product">
-<img src="Platinium.jpg">
-<p>Platinium</p>
-<p>PKR 2500</p>
-<a class="order-btn" href="https://wa.me/03021240254?text=Hi%20I%20want%20to%20order%20Platinium">Order Now</a>
-</div>
-
-<div class="product">
-<img src="Rose Bloom.jpg">
-<p>Rose Bloom</p>
-<p>PKR 2500</p>
-<a class="order-btn" href="https://wa.me/03021240254?text=Hi%20I%20want%20to%20order%20Rose%20Bloom">Order Now</a>
-</div>
-
-</div>
+<section class="products">
+  <div class="product-card">
+    <img src="BlackRose.jpg" alt="BlackRose">
+    <h3>BlackRose</h3>
+    <p>PKR 2500</p>
+    <button class="order-btn">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="Intenseyou.jpg" alt="Intense You">
+    <h3>Intense You</h3>
+    <p>PKR 2500</p>
+    <button class="order-btn">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="Kaptan.jpg" alt="Kaptan">
+    <h3>Kaptan</h3>
+    <p>PKR 2500</p>
+    <button class="order-btn">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="LazzyGirl.png" alt="Lazzy Girl">
+    <h3>Lazzy Girl</h3>
+    <p>PKR 2500</p>
+    <button class="order-btn">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="Lumine.jpg" alt="Lumine">
+    <h3>Lumine</h3>
+    <p>PKR 2500</p>
+    <button class="order-btn">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="Magny.jpg" alt="Magny">
+    <h3>Magny</h3>
+    <p>PKR 3500</p>
+    <button class="order-btn">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="Platinium.jpg" alt="Platinium">
+    <h3>Platinium</h3>
+    <p>PKR 2500</p>
+    <button class="order-btn">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="RoseBloom.jpg" alt="Rose Bloom">
+    <h3>Rose Bloom</h3>
+    <p>PKR 2999</p>
+    <button class="order-btn">Order Now</button>
+  </div>
+</section>
 
 <footer>
-  <h3>Nécrose Fragrances</h3>
-  <p>Contact: 03021240254</p>
-  <p>Email: fahadejazaziz@gmail.com</p>
-  <p><strong>7 Days Refund Policy</strong><br>If not satisfied, contact within 7 days.</p>
-  <p><strong>Privacy Policy</strong><br>Your data is safe.</p>
+  Contact: <a href="mailto:fahadejazaziz@gmail.com">fahadejazaziz@gmail.com</a> |
+  WhatsApp: <a href="https://wa.me/03021240254">03021240254</a> |
+  <a href="#">Refund Policy (7 Days)</a> |
+  <a href="#">Privacy Policy</a>
 </footer>
-
-<script>
-const texts = [
-"ꜱᴀʟᴇ ʟɪᴠᴇ ɢʀᴀʙ ʏᴏᴜʀꜱ ɴᴏᴡ",
-"ʏᴏᴜ ᴄᴀɴ'ᴛ ᴡᴇᴀʀ ɪᴛ ɪᴛ ʙᴇᴄᴏᴍᴇꜱ ʏᴏᴜ"
-];
-
-let i = 0;
-const el = document.getElementById("announcement");
-
-function changeText(){
-  el.style.opacity = 0;
-  setTimeout(()=>{
-    el.innerText = texts[i];
-    el.style.opacity = 1;
-    i = (i+1)%texts.length;
-  },500);
-}
-changeText();
-setInterval(changeText,5000);
-
-document.getElementById("menu-btn").onclick = ()=>{
-  const m = document.getElementById("menu");
-  m.style.display = m.style.display==="block"?"none":"block";
-}
-</script>
 
 </body>
 </html>
